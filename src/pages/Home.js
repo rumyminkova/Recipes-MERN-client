@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import RecipesList from "../recipes/RecipesList";
 import { fetchRecipes } from "../actions/recipesActions";
 
+import SearchForm from "../components/SearchForm";
+
 const Home = () => {
   const recipes = useSelector((state) => state.recipes);
   const dispatch = useDispatch();
@@ -13,7 +15,6 @@ const Home = () => {
 
   const getRecipes = () => {
     dispatch(fetchRecipes());
-    console.log(recipes);
   };
 
   if (recipes.isLoading) return <h1> Loading </h1>;
@@ -21,6 +22,7 @@ const Home = () => {
 
   return (
     <div>
+      <SearchForm />
       <button onClick={getRecipes}> Fetch Recipes </button>
 
       <RecipesList recipes={recipes.items} />
