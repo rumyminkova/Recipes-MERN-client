@@ -5,7 +5,7 @@ const initState = { isLoading: false, items: [], error: null };
 const recipesReducer = (state = initState, action) => {
   switch (action.type) {
     case ActionTypes.RECIPES_LOADING:
-      return { ...state, loading: true };
+      return { ...state, loading: true, error: null };
     case ActionTypes.RECIPES_SUCCESS:
       return { ...state, loading: false, items: action.payload, error: null };
     case ActionTypes.RECIPES_FAILED:

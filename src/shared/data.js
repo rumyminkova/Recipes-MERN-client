@@ -1,4 +1,5 @@
 export const DIET = [
+  "",
   "pescetarian",
   "lacto vegetarian",
   "ovo vegetarian",
@@ -20,6 +21,7 @@ export const INTOLERANCES = [
   "wheat",
 ];
 export const DISH_TYPE = [
+  "",
   "main course",
   "side dish",
   "dessert",
@@ -33,6 +35,7 @@ export const DISH_TYPE = [
   "drink",
 ];
 export const CUISINE = [
+  "",
   "african",
   "chinese",
   "japanese",

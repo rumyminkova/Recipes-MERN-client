@@ -1,31 +1,26 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import RecipesList from "../recipes/RecipesList";
-import { fetchRecipes } from "../actions/recipesActions";
-
 import SearchForm from "../components/SearchForm";
 
 const Home = () => {
   const recipes = useSelector((state) => state.recipes);
-  const dispatch = useDispatch();
+
   useEffect(() => {
     //   dispatch(fetchRecipes);
   }, []);
 
-  const getRecipes = () => {
-    dispatch(fetchRecipes());
-  };
-
-  if (recipes.isLoading) return <h1> Loading </h1>;
-  if (recipes.error) return <h1> {recipes.error} </h1>;
-
   return (
     <div>
       <SearchForm />
-      <button onClick={getRecipes}> Fetch Recipes </button>
-
-      <RecipesList recipes={recipes.items} />
+      {recipes.isLoading ? (
+        <h1> Loading </h1>
+      ) : recipes.error ? (
+        <h1> {recipes.error} </h1>
+      ) : (
+        <RecipesList recipes={recipes.items} />
+      )}
     </div>
   );
 };

@@ -15,20 +15,22 @@ export const recipesSuccess = (recipes) => ({
   payload: recipes,
 });
 
-export const fetchRecipes = () => async (dispatch) => {
+export const fetchRecipes = ({ searchTerm, dishType, diet, cuisine }) => async (
+  dispatch
+) => {
   dispatch(recipesLoading());
   const options = {
     method: "GET",
     url:
       "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search",
     params: {
-      query: "burger",
-      diet: "",
+      query: searchTerm,
+      diet: diet,
       excludeIngredients: "",
       intolerances: "",
       number: "5",
       offset: "0",
-      type: "main course",
+      type: dishType,
     },
     headers: {
       "x-rapidapi-key": "981cb182b8msh990478e70276a77p1f2b25jsn37e72d02f516",
