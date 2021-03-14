@@ -1,11 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-const RecipesList = ({ recipes }) => {
+import RecipeCard from "./recipe/RecipeCard";
+
+const RecipesList = () => {
+  const recipes = useSelector((state) => state.recipes.items);
   return (
     <div>
       {recipes.map((recipe) => (
-        <div>
-          <Recipe recipe={recipe} />
+        <div key={recipe.id}>
+          {recipe.id}
+          {recipe.title}
+          {/* <RecipeCard recipe={recipe} /> */}
         </div>
       ))}
     </div>

@@ -6,11 +6,11 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import "bootstrap/dist/css/bootstrap.css";
 
-import recipesReducer from "./reducers/recipesReducer";
+import {rootReducer} from "./reducers/rootReducer";
 import App from "./App";
 
 const store = createStore(
-  recipesReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
 
