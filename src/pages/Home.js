@@ -18,6 +18,8 @@ const Home = () => {
         <h1> Loading </h1>
       ) : recipes.error ? (
         <h1> {recipes.error} </h1>
+      ) : recipes.items.length === 0 ? (
+        <h5>Sorry... No recipes found with that criteria</h5>
       ) : (
         <RecipesList recipes={recipes.items} />
       )}
