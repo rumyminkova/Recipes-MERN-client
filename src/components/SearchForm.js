@@ -23,29 +23,32 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="container-fluid p-3 search-form_container">
-      <h4 className="text-center my-3">Search recipes</h4>
+    <div className="container p-2 search-form_container">
       <Form className="" onSubmit={handleSubmit}>
-        <Row form className="mb-3">
-          <Col>
-            <Input
-              type="text"
-              id="searchTerm"
-              placeholder="Chicken, beef, pasta, cake..."
-              onChange={(e) =>
-                setFormData({ ...formData, searchTerm: e.target.value })
-              }
-            />
+        <Row form className="my-3 justify-content-around">
+          <Col sm={6} md={5}>
+            <FormGroup row className="align-items-center">
+              <Label for="searchTerm" sm={2}>
+                Search
+              </Label>
+              <Col sm={10}>
+                <Input
+                  type="text"
+                  id="searchTerm"
+                  placeholder="Chicken, beef, pasta, cake..."
+                  onChange={(e) =>
+                    setFormData({ ...formData, searchTerm: e.target.value })
+                  }
+                />
+              </Col>
+            </FormGroup>
           </Col>
-        </Row>
-
-        <Row form className="my-3">
-          <Col sm={6}>
-            <FormGroup row>
+          <Col sm={6} md={5}>
+            <FormGroup row className="align-items-center">
               <Label for="dishType" sm={2}>
                 Type
               </Label>
-              <Col sm={9}>
+              <Col sm={10}>
                 <Input
                   type="select"
                   id="dishType"
@@ -60,12 +63,15 @@ const SearchForm = () => {
               </Col>
             </FormGroup>
           </Col>
-          <Col sm={6}>
-            <FormGroup row>
+        </Row>
+
+        <Row form className="my-3 justify-content-around">
+          <Col sm={6} md={5}>
+            <FormGroup row className="align-items-center">
               <Label for="diet" sm={2}>
                 Diet
               </Label>
-              <Col sm={9}>
+              <Col sm={10}>
                 <Input
                   type="select"
                   id="diet"
@@ -80,14 +86,12 @@ const SearchForm = () => {
               </Col>
             </FormGroup>
           </Col>
-        </Row>
-        <Row form>
-          <Col sm={6}>
-            <FormGroup row>
+          <Col sm={6} md={5}>
+            <FormGroup row className="align-items-center">
               <Label for="cuisine" sm={2}>
                 Cuisine
               </Label>
-              <Col sm={9}>
+              <Col sm={10}>
                 <Input
                   type="select"
                   id="cuisine"
@@ -103,7 +107,8 @@ const SearchForm = () => {
             </FormGroup>
           </Col>
         </Row>
-        <Row className="justify-content-end">
+
+        <Row className="justify-content-center">
           <Button type="submit">Search</Button>
         </Row>
       </Form>
