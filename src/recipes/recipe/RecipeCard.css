@@ -1,0 +1,13 @@
+  .recipe_card_overlay {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    height: 20%;
+    color: var(--color-light);
+    font-weight: 500;
+  }
+
+
+  .recipe_card_title {
+    color: var(--color-dark);
+    font-size: 2rem;
+    text-align: center;
+  }

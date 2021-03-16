@@ -6,14 +6,12 @@ import RecipeCard from "./recipe/RecipeCard";
 const RecipesList = () => {
   const recipes = useSelector((state) => state.recipes.items);
   return (
-    <div>
-      {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          {recipe.id}
-          {recipe.title}
-          {/* <RecipeCard recipe={recipe} /> */}
-        </div>
-      ))}
+    <div className="container-fluid p-5">
+      <div className="row justify-content-center mb-3">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -28,7 +28,7 @@ export const fetchRecipes = ({ searchTerm, dishType, diet, cuisine }) => async (
       diet: diet,
       excludeIngredients: "",
       intolerances: "",
-      number: "5",
+      number: "10",
       offset: "0",
       type: dishType,
     },
