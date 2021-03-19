@@ -1,5 +1,4 @@
 import React from "react";
-import { CardImg, Card } from "reactstrap";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
 
@@ -12,7 +11,7 @@ const RenderIngredients = ({ ingredients }) => {
       <ul className="justify-content-left my-4">
         {ingredients.map((ingredient) => {
           return (
-            <p key={ingredient.id} className="p-3">
+            <li key={ingredient.id} className="p-3">
               <BsCheck
                 className="mr-4"
                 size="2.3rem"
@@ -22,7 +21,7 @@ const RenderIngredients = ({ ingredients }) => {
                 }}
               />{" "}
               {ingredient.originalString}
-            </p>
+            </li>
           );
         })}
       </ul>
@@ -38,7 +37,7 @@ const RenderDirections = ({ directions }) => {
       <ol className="justify-content-left">
         {steps.map((step) => {
           return (
-            <li key={step.number} className="my-4 p-3">
+            <li key={step.number} className="my-4 p-3 ml-5 mr-3">
               {step.step}
             </li>
           );
@@ -76,63 +75,68 @@ const RecipeInfo = ({ recipe }) => {
           <button>Add to Cookbook</button>
         </div>
         <div className="container recipe-main-container">
-          <div className="row justify-content-around">
-            <div className="col-12 col-sm-10 col-md-7 col-lg-6">
-              <div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
+              <div className="mx-3 my-5">
                 <p className="recipe-info_title text-center">{recipe.title}</p>
               </div>
-              <div>
-                <RenderTags recipe={recipe} />
-                <img
-                  src={recipe.image}
-                  alt={recipe.title}
-                  className="img-thumbnail img-fluid"
-                />
-                <div className="row mt-4">
-                  <div className="col-6 text-center">
-                    <FaRegClock
-                      size="2.3rem"
-                      style={{
-                        verticalAlign: "middle",
-                        color: "rgb(255, 175, 42)",
-                      }}
+              <div className="m-5">
+                <div className="row justify-content-center">
+                  <div className="col-12 col-md-10">
+                    <RenderTags recipe={recipe} />
+                    <img
+                      src={recipe.image}
+                      alt={recipe.title}
+                      className="img-thumbnail img-fluid"
+                      width="100%"
                     />
-                    <span className="text-small-italic"> Ready in</span>
-                    <h1 className="display-5 mt-3">
-                      {recipe.readyInMinutes}
-                      <span className="text-small-italic"> min</span>{" "}
-                    </h1>
-                  </div>
-                  <div className="col-6 text-center">
-                    <FaUtensils
-                      size="2.3rem"
-                      style={{
-                        verticalAlign: "middle",
-                        color: "rgb(255, 175, 42)",
-                      }}
-                    />
-                    <span className="text-small-italic"> Servings</span>
-                    <h1 className="display-5 mt-3">{recipe.servings}</h1>
+                    <div className="row mt-4">
+                      <div className="col-6 text-center">
+                        <FaRegClock
+                          size="2.3rem"
+                          style={{
+                            verticalAlign: "middle",
+                            color: "rgb(255, 175, 42)",
+                          }}
+                        />
+                        <span className="text-small-italic"> Ready in</span>
+                        <h1 className="display-5 mt-3">
+                          {recipe.readyInMinutes}
+                          <span className="text-small-italic"> min</span>{" "}
+                        </h1>
+                      </div>
+                      <div className="col-6 text-center">
+                        <FaUtensils
+                          size="2.3rem"
+                          style={{
+                            verticalAlign: "middle",
+                            color: "rgb(255, 175, 42)",
+                          }}
+                        />
+                        <span className="text-small-italic"> Servings</span>
+                        <h1 className="display-5 mt-3">{recipe.servings}</h1>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h4 className="display-4 mx-5">Ingredients</h4>
+                <p className="recipe-info_subtitle mx-5">Ingredients</p>
                 <hr className="underline mb-4"></hr>
                 <RenderIngredients ingredients={recipe.extendedIngredients} />
               </div>
 
               <div className="text-justify">
-                <h3 className="display-4 mx-5">Directions</h3>
+                <p className="recipe-info_subtitle mx-5">Directions</p>
                 <hr className="underline mb-4"></hr>
                 <RenderDirections directions={recipe.analyzedInstructions} />
               </div>
 
-              <div>
+              <div className="p-2">
                 <hr className="underline mb-4"></hr>
                 <p className="recipe-source-text">
-                  <span className="mr-2">Recipe source:</span>
+                  <span className="mr-2 font-weight-bold">Recipe source:</span>
                   <a
                     className="source-link text-italic"
                     href={recipe.sourceUrl}

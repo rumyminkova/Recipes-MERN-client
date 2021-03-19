@@ -1,55 +1,54 @@
 :root {
-    --color-primary: rgb(255, 175, 42);
-    --color-primary-dark: rgb(246, 154, 0);
-  
-    --color-light: rgb(231, 243, 245);
-  
-    --color-dark: rgba(0, 0, 0, 0.8);
-    --color-gray-1: rgb(51, 51, 51);
-    --color-gray-2: rgb(70, 68, 68);
-    --color-gray-3: rgb(153, 153, 153);
-    --color-gray-light: rgba(255, 255, 255, 0.9);
-  
-    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-    --shadow-primary: 0 1rem 7rem #ffaf2a;
-    --shadow-gray: 0 0.2rem 6rem #333;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%; /* 1rem=10px 10px/16px(default)=0.625 = 62.5% */
-  }
-  
-  body {
-    font-family: "Roboto Condensed", sans-serif;
-    line-height: 1.7;
-    font-size: 1.6rem;
-  }
-  
-  .text-small-italic {
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: lighter;
-    vertical-align: middle;
-  }
-  
-  .special-font {
-    font-family: "Kaushan Script", cursive;
-    color: var(--color-primary-dark);
-  }
+  --color-primary: rgb(255, 175, 42);
+  --color-primary-dark: rgb(246, 154, 0);
 
+  --color-light: rgb(231, 243, 245);
 
-  .search-container{
-      max-width: 80%;
-  }
+  --color-dark: rgba(0, 0, 0, 0.8);
+  --color-gray-1: rgb(51, 51, 51);
+  --color-gray-2: rgb(70, 68, 68);
+  --color-gray-3: rgb(153, 153, 153);
+  --color-gray-light: rgba(255, 255, 255, 0.9);
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-primary: 0 1rem 5rem #ffaf2a;
+  --shadow-gray: 0 0.2rem 6rem #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem=10px 10px/16px(default)=0.625 = 62.5% */
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.7;
+  font-size: 1.6rem;
+}
+
+.text-small-italic {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: lighter;
+  vertical-align: middle;
+}
+
+.special-font {
+  font-family: "Kaushan Script", cursive;
+  color: var(--color-primary-dark);
+}
+
+.search-container {
+  max-width: 80%;
+}

@@ -1,20 +1,32 @@
+li,
+p {
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .recipe-main-container {
   color: var(--color-grey-1);
-  background-color: hsl(60, 79%, 91%);
+}
+
+.recipe-container_info {
+  box-shadow: var(--shadow-primary);
 }
 
 .recipe-info_title {
   font-size: 3rem;
 }
 
-li,
-p {
-  font-size: 1.6rem;
+.recipe-info_subtitle {
+  font-size: 2.5rem;
+  margin-top: 4rem;
 }
 
 .underline {
   margin: 0;
-  width: 70%;
+  width: 35%;
   border: 1px solid var(--color-primary);
 }
 
