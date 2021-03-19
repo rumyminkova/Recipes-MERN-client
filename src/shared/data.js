@@ -61,3 +61,12 @@ export const CUISINE = [
   "caribbean",
   "latin american",
 ];
+
+export const RECIPE_TAGS = [
+  "vegetarian",
+  "vegan",
+  "glutenFree",
+  "dairyFree",
+  "veryHealthy",
+  "ketogenic",
+];

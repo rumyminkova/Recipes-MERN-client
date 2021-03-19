@@ -10,7 +10,7 @@ import "./TopNav.css";
 
 const TopNav = () => {
   return (
-    <Navbar className="navbar-bar fixed">
+    <Navbar className="navbar-bar sticky-top">
       <NavbarText>
         <FaBars className="brand-icon p-1 mr-4" />
         <ImSpoonKnife className="brand-icon p-1" />

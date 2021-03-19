@@ -1,9 +1,9 @@
 import React from "react";
 import { CardImg, Card } from "reactstrap";
-
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
 
+import { RECIPE_TAGS } from "../../shared/data";
 import "./RecipeInfo.css";
 
 const RenderIngredients = ({ ingredients }) => {
@@ -51,10 +51,9 @@ const RenderDirections = ({ directions }) => {
 };
 
 const RenderTags = ({ recipe }) => {
-  const tags = ["vegetarian", "vegan", "glutenFree", "dairyFree"];
   return (
     <ul className="mt-3 ml-3">
-      {tags.map((tag) =>
+      {RECIPE_TAGS.map((tag) =>
         recipe[tag] ? (
           <li
             className="btn disabled  m-1 text-uppercase"
@@ -73,89 +72,76 @@ const RecipeInfo = ({ recipe }) => {
   if (recipe) {
     return (
       <>
-        <div className="container mt-5">
+        <div className="container d-flex justify-content-end my-5">
           <button>Add to Cookbook</button>
         </div>
-        <div className="container recipe-main-container mt-5">
-          <div className="row justify-content-center">
-            <div className="col-12 col-md-9">
-              <div className="row">
-                <div className="col mb-3 m-3">
-                  <p className="recipe-title"> {recipe.title}</p>
-                </div>
+        <div className="container recipe-main-container">
+          <div className="row justify-content-around">
+            <div className="col-12 col-sm-10 col-md-7 col-lg-6">
+              <div>
+                <p className="recipe-info_title text-center">{recipe.title}</p>
               </div>
-              <div className="row">
-                <div className="col-12 col-md-8 col-lg-6 my-md-5 my-3">
-                  <RenderTags recipe={recipe} />
-                  <Card className="card  mx-3">
-                    <CardImg
-                      top
-                      src={recipe.image}
-                      alt={recipe.title}
-                      className="img-thumbnail"
+              <div>
+                <RenderTags recipe={recipe} />
+                <img
+                  src={recipe.image}
+                  alt={recipe.title}
+                  className="img-thumbnail img-fluid"
+                />
+                <div className="row mt-4">
+                  <div className="col-6 text-center">
+                    <FaRegClock
+                      size="2.3rem"
+                      style={{
+                        verticalAlign: "middle",
+                        color: "rgb(255, 175, 42)",
+                      }}
                     />
-                  </Card>
-                  <div className="row mt-4">
-                    <div className="col-6 text-center">
-                      <FaRegClock
-                        size="2.3rem"
-                        style={{
-                          verticalAlign: "middle",
-                          color: "rgb(255, 175, 42)",
-                        }}
-                      />
-                      <span className="text-small-italic"> Ready in</span>
-                      <h1 className="display-5 mt-3">
-                        {recipe.readyInMinutes}
-                        <span className="text-small-italic"> min</span>{" "}
-                      </h1>
-                    </div>
-                    <div className="col-6 text-center">
-                      <FaUtensils
-                        size="2.3rem"
-                        style={{
-                          verticalAlign: "middle",
-                          color: "rgb(255, 175, 42)",
-                        }}
-                      />
-                      <span className="text-small-italic"> Servings</span>
-                      <h1 className="display-5 mt-3">{recipe.servings}</h1>
-                    </div>
+                    <span className="text-small-italic"> Ready in</span>
+                    <h1 className="display-5 mt-3">
+                      {recipe.readyInMinutes}
+                      <span className="text-small-italic"> min</span>{" "}
+                    </h1>
+                  </div>
+                  <div className="col-6 text-center">
+                    <FaUtensils
+                      size="2.3rem"
+                      style={{
+                        verticalAlign: "middle",
+                        color: "rgb(255, 175, 42)",
+                      }}
+                    />
+                    <span className="text-small-italic"> Servings</span>
+                    <h1 className="display-5 mt-3">{recipe.servings}</h1>
                   </div>
                 </div>
               </div>
-              <div className="row my-5">
-                <div className="col-md-11 col-lg-7 my-5 mx-5">
-                  <h4 className="display-4 mx-5">Ingredients</h4>
-                  <hr className="underline mb-4"></hr>
-                  <RenderIngredients ingredients={recipe.extendedIngredients} />
-                </div>
-                <div className="col-lg-5 align-self-center my-md-5">
-                  {/* <RecipeNutritions nutritions={nutritions}/> */}
-                </div>
+
+              <div>
+                <h4 className="display-4 mx-5">Ingredients</h4>
+                <hr className="underline mb-4"></hr>
+                <RenderIngredients ingredients={recipe.extendedIngredients} />
               </div>
-              <div className="row mb-5">
-                <div className="col-md-11 col-lg-7 text-justify mx-5">
-                  <h3 className="display-4 mx-5">Directions</h3>
-                  <hr className="underline mb-4"></hr>
-                  <RenderDirections directions={recipe.analyzedInstructions} />
-                </div>
+
+              <div className="text-justify">
+                <h3 className="display-4 mx-5">Directions</h3>
+                <hr className="underline mb-4"></hr>
+                <RenderDirections directions={recipe.analyzedInstructions} />
               </div>
-              <div className="row">
-                <div className="col mb-5 align-self-center mx-5">
-                  <hr className="underline mb-4"></hr>
-                  <p className="recipe-source-text">
-                    <span className="mr-2">Recipe source:</span>
-                    <a
-                      className="source-link text-italic"
-                      href={recipe.sourceUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {recipe.sourceUrl}
-                    </a>
-                  </p>
-                </div>
+
+              <div>
+                <hr className="underline mb-4"></hr>
+                <p className="recipe-source-text">
+                  <span className="mr-2">Recipe source:</span>
+                  <a
+                    className="source-link text-italic"
+                    href={recipe.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {recipe.sourceUrl}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
