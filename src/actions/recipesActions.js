@@ -15,7 +15,7 @@ export const recipesSuccess = (recipes) => ({
   payload: recipes,
 });
 
-export const fetchRecipes = ({ searchTerm, dishType, diet, cuisine }) => async (
+export const fetchRecipes = ({ searchTerm, dishType, diet}) => async (
   dispatch
 ) => {
   dispatch(recipesLoading());
