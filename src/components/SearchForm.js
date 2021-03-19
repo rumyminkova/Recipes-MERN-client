@@ -20,6 +20,7 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchRecipes(formData));
+    setFormData(initialFormState);
   };
 
   return (
@@ -36,6 +37,7 @@ const SearchForm = () => {
                   type="text"
                   id="searchTerm"
                   placeholder="Chicken, beef, pasta, cake..."
+                  value={formData.searchTerm}
                   onChange={(e) =>
                     setFormData({ ...formData, searchTerm: e.target.value })
                   }
@@ -52,6 +54,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="dishType"
+                  value={formData.dishType}
                   onChange={(e) =>
                     setFormData({ ...formData, dishType: e.target.value })
                   }
@@ -75,6 +78,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="diet"
+                  value={formData.diet}
                   onChange={(e) =>
                     setFormData({ ...formData, diet: e.target.value })
                   }
@@ -95,6 +99,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="cuisine"
+                  value={formData.cuisine}
                   onChange={(e) =>
                     setFormData({ ...formData, cuisine: e.target.value })
                   }

@@ -24,9 +24,10 @@ const RecipeCard = ({ recipe }) => {
           <CardImgOverlay className="recipe_card_overlay d-flex justify-content-around">
             <div>
               <FaRegClock
-                size="2rem"
+                size="2.3rem"
                 style={{
                   verticalAlign: "middle",
+                  color: "rgb(255, 175, 42)",
                 }}
                 className="mr-2"
               />
@@ -34,9 +35,10 @@ const RecipeCard = ({ recipe }) => {
             </div>
             <div>
               <FaUtensils
-                size="2rem"
+                size="2.3rem"
                 style={{
                   verticalAlign: "middle",
+                  color: "rgb(255, 175, 42)",
                 }}
                 className="mr-2"
               />

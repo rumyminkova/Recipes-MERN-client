@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as ActionTypes from "./actionTypes";
+import { API_HEADERS } from "../config";
 
 const recipesLoading = () => ({
   type: ActionTypes.RECIPES_LOADING,
@@ -15,7 +16,7 @@ export const recipesSuccess = (recipes) => ({
   payload: recipes,
 });
 
-export const fetchRecipes = ({ searchTerm, dishType, diet}) => async (
+export const fetchRecipes = ({ searchTerm, dishType, diet, cuisine }) => async (
   dispatch
 ) => {
   dispatch(recipesLoading());
@@ -25,6 +26,7 @@ export const fetchRecipes = ({ searchTerm, dishType, diet}) => async (
       "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search",
     params: {
       query: searchTerm,
+      cuisine: cuisine,
       diet: diet,
       excludeIngredients: "",
       intolerances: "",
@@ -32,10 +34,7 @@ export const fetchRecipes = ({ searchTerm, dishType, diet}) => async (
       offset: "0",
       type: dishType,
     },
-    headers: {
-      "x-rapidapi-key": "981cb182b8msh990478e70276a77p1f2b25jsn37e72d02f516",
-      "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-    },
+    headers: API_HEADERS,
   };
   try {
     const response = await axios.request(options);
