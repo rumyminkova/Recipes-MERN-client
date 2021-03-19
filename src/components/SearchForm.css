@@ -1,3 +1,9 @@
 .search-form_container {
   max-width: 100%;
+  box-shadow: var(--shadow-dark);
+  border-radius: 0.5rem;
+}
+
+.search-form_input {
+  font-size: 1.5rem;
 }

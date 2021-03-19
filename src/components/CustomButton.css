@@ -1,0 +1,20 @@
+.submit-button {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  padding: 0.5rem 2rem;
+  margin: 2rem;
+  border-radius: 5%;
+  color: var(--color-light);
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.submit-button:focus {
+  outline: none;
+}

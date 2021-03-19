@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { DISH_TYPE, DIET, CUISINE } from "../shared/data";
+import CustomButton from "./CustomButton";
 import { fetchRecipes } from "../actions/recipesActions";
 import "./SearchForm.css";
 
@@ -24,10 +25,10 @@ const SearchForm = () => {
   };
 
   return (
-    <div className="container p-2 search-form_container">
-      <Form className="" onSubmit={handleSubmit}>
-        <Row form className="my-3 justify-content-around">
-          <Col sm={6} md={5}>
+    <div className="container px-5 py-3 search-form_container">
+      <Form className="search-form" onSubmit={handleSubmit}>
+        <Row form className="my-md-3 justify-content-around">
+          <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
               <Label for="searchTerm" sm={2}>
                 Search
@@ -36,6 +37,7 @@ const SearchForm = () => {
                 <Input
                   type="text"
                   id="searchTerm"
+                  className="search-form_input"
                   placeholder="Chicken, beef, pasta, cake..."
                   value={formData.searchTerm}
                   onChange={(e) =>
@@ -45,7 +47,7 @@ const SearchForm = () => {
               </Col>
             </FormGroup>
           </Col>
-          <Col sm={6} md={5}>
+          <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
               <Label for="dishType" sm={2}>
                 Type
@@ -54,6 +56,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="dishType"
+                  className="search-form_input"
                   value={formData.dishType}
                   onChange={(e) =>
                     setFormData({ ...formData, dishType: e.target.value })
@@ -68,8 +71,8 @@ const SearchForm = () => {
           </Col>
         </Row>
 
-        <Row form className="my-3 justify-content-around">
-          <Col sm={6} md={5}>
+        <Row form className="my-md-3 justify-content-around">
+          <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
               <Label for="diet" sm={2}>
                 Diet
@@ -78,6 +81,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="diet"
+                  className="search-form_input"
                   value={formData.diet}
                   onChange={(e) =>
                     setFormData({ ...formData, diet: e.target.value })
@@ -90,7 +94,7 @@ const SearchForm = () => {
               </Col>
             </FormGroup>
           </Col>
-          <Col sm={6} md={5}>
+          <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
               <Label for="cuisine" sm={2}>
                 Cuisine
@@ -99,6 +103,7 @@ const SearchForm = () => {
                 <Input
                   type="select"
                   id="cuisine"
+                  className="search-form_input"
                   value={formData.cuisine}
                   onChange={(e) =>
                     setFormData({ ...formData, cuisine: e.target.value })
@@ -114,7 +119,7 @@ const SearchForm = () => {
         </Row>
 
         <Row className="justify-content-center">
-          <Button type="submit">Search</Button>
+          <CustomButton buttonLabel="Search">Search</CustomButton>
         </Row>
       </Form>
     </div>

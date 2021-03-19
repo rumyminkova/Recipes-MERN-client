@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center bg-info my-5 search-container mx-auto">
+      <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
         <SearchForm />
       </div>
       {recipes.isLoading ? (
