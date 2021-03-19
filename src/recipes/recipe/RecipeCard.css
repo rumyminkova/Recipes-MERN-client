@@ -11,3 +11,13 @@
   font-size: 2rem;
   text-align: center;
 }
+
+.recipe-card {
+  transition: all 0.4s;
+}
+
+.recipe-card:hover {
+  box-shadow: var(--shadow-dark);
+  transform: translateY(-2px);
+  transition: all 0.4s;
+}

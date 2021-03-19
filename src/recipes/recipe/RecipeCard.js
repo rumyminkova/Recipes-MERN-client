@@ -9,7 +9,7 @@ import "./RecipeCard.css";
 const RecipeCard = ({ recipe }) => {
   const imageUrl = `${RECIPES_IMAGES}${recipe.id}-312x231.jpg`;
   return (
-    <div className="col-lg-3 col-md-4 col-sm-6 my-5 px-5 px-sm-3">
+    <div className="col-lg-3 col-md-4 col-sm-6 my-5 px-5 px-sm-3 recipe-card">
       <Link to={`/recipes/${recipe.id}`} style={{ textDecoration: "none" }}>
         <Card className="border-0">
           <CardImg
