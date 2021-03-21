@@ -5,10 +5,11 @@ import Home from "./pages/Home";
 import RecipeInfoPage from "./pages/RecipeInfoPage";
 import TopNav from "./components/navigation/TopNav";
 import "./App.css";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <>
+    <div className="main-container">
       <BrowserRouter>
         <TopNav />
         <Switch>
@@ -17,7 +18,7 @@ const App = () => {
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,26 @@
+.site-footer {
+  /* background-color: var(--color-primary-dark); */
+  margin: 0;
+  padding: 20px 0px;
+}
+
+.footer-small-text {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+}
+
+h4,
+.social-icons {
+  color: var(--color-primary);
+}
+
+.footer-link {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}

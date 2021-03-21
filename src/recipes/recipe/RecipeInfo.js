@@ -76,7 +76,7 @@ const RecipeInfo = ({ recipe }) => {
         </div>
         <div className="container recipe-main-container">
           <div className="row justify-content-center">
-            <div className="col-12 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
+            <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
               <div className="mx-3 my-5">
                 <p className="recipe-info_title text-center">{recipe.title}</p>
               </div>
