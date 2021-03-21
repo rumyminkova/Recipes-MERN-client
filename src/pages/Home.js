@@ -12,7 +12,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <>
       <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
         <SearchForm />
       </div>
@@ -25,7 +25,7 @@ const Home = () => {
       ) : (
         <RecipesList recipes={recipes.items} />
       )}
-    </div>
+    </>
   );
 };
 

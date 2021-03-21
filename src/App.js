@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="main-container">
+    <>
       <BrowserRouter>
         <TopNav />
         <Switch>
@@ -18,7 +18,7 @@ const App = () => {
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 
