@@ -13,6 +13,7 @@ ul {
 
 .recipe-container_info {
   box-shadow: var(--shadow-dark);
+  background: white;
 }
 
 .recipe-info_title {

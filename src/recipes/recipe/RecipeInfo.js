@@ -71,9 +71,9 @@ const RecipeInfo = ({ recipe }) => {
   if (recipe) {
     return (
       <>
-        <div className="container d-flex justify-content-end my-5">
+        {/* <div className="container d-flex justify-content-end my-5">
           <button>Add to Cookbook</button>
-        </div>
+        </div> */}
         <div className="container recipe-main-container">
           <div className="row justify-content-center">
             <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">

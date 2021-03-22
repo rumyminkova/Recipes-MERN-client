@@ -9,11 +9,11 @@ import "./RecipeCard.css";
 const RecipeCard = ({ recipe }) => {
   const imageUrl = `${RECIPES_IMAGES}${recipe.id}-312x231.jpg`;
   return (
-    <div className="col-sm-6 col-md-4 col-lg-3 my-5 mx-5 mx-sm-3 recipe-card">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 my-5 mx-2 p-0 recipe-card">
       <Link to={`/recipes/${recipe.id}`} style={{ textDecoration: "none" }}>
         <Card className="border-0">
           <CardImg width="100%" src={imageUrl} alt={recipe.title} />
-          <CardTitle className="my-3 p-3 recipe_card_title">
+          <CardTitle className="my-3 recipe_card_title">
             {recipe.title}
           </CardTitle>
           <CardImgOverlay className="recipe_card_overlay d-flex justify-content-around">
