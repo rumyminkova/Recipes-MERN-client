@@ -12,7 +12,7 @@ const TopNav = () => {
   return (
     <Navbar className="navbar-bar sticky-top">
       <NavbarText>
-        <FaBars className="brand-icon p-1 mr-4" />
+        {/* <FaBars className="brand-icon p-1 mr-4" /> */}
         <ImSpoonKnife className="brand-icon p-1" />
         <span className="special-font special-font_brand">Recipes</span>
       </NavbarText>

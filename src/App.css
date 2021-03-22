@@ -1,13 +1,13 @@
 :root {
-  --color-primary: rgb(255, 175, 42);
+  --color-primary: #ffaf2a;
   --color-primary-dark: rgb(246, 154, 0);
 
   --color-light: rgb(231, 243, 245);
 
-  --color-dark: rgba(0, 0, 0, 0.8);
-  --color-gray-1: rgb(51, 51, 51);
-  --color-gray-2: rgb(70, 68, 68);
-  --color-gray-3: rgb(153, 153, 153);
+  --color-dark: #000000cc;
+  --color-gray-1: #333333;
+  --color-gray-2: #464444;
+  --color-gray-3: #999999;
   --color-gray-light: rgba(255, 255, 255, 0.9);
 
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
 import RecipeInfoPage from "./pages/RecipeInfoPage";
 import TopNav from "./components/navigation/TopNav";
+import SideBar from "./components/navigation/SideBar";
 import "./App.css";
 import Footer from "./components/Footer";
 
@@ -11,7 +12,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <TopNav />
+        <SideBar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/recipes/:recipeId" component={RecipeInfoPage} />
