@@ -5,6 +5,8 @@ import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
 import { Navbar, NavbarText, NavItem, Nav, NavLink } from "reactstrap";
 
+import CustomButton from "../CustomButton";
+
 import "./SideBar.css";
 
 const SIDEBAR_DATA = [
@@ -17,7 +19,7 @@ const SIDEBAR_DATA = [
   {
     id: 20,
     path: "/recipes/search/byingredient",
-    text: "Search Recipes by Ingredients",
+    text: "Recipes by Ingredients",
     cName: "nav-text",
   },
   {
@@ -50,15 +52,16 @@ const SideBar = () => {
       <IconContext.Provider
         value={{ color: "#ffaf2a", size: "3.5rem", verticalAlign: "middle" }}
       >
-        <div className="navbar sticky-top">
+        <div className="navbar">
           <Link to="#" className="menu-bar">
             <VscThreeBars onClick={showSideBar} />
           </Link>
-          <NavbarText>
-            {/* <FaBars className="brand-icon p-1 mr-4" /> */}
-            <ImSpoonKnife className="brand-icon p-1" />
+          <span>
+            <ImSpoonKnife />
             <span className="special-font special-font_brand">Recipes</span>
-          </NavbarText>
+          </span>
+
+          <CustomButton buttonLabel="Login" />
         </div>
         <nav className={sideBar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSideBar}>
@@ -66,6 +69,8 @@ const SideBar = () => {
               <Link to="#" className="menu-bars">
                 <VscClose />
               </Link>
+              <ImSpoonKnife className="ml-4" />
+              <span className="special-font special-font_brand">Recipes</span>
             </li>
             {SIDEBAR_DATA.map((item) => (
               <li key={item.id} className={item.cName}>

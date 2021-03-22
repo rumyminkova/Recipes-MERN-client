@@ -1,6 +1,7 @@
 :root {
-  --color-primary: #ffaf2a;
+  --color-primary: rgb(255, 175, 42);
   --color-primary-dark: rgb(246, 154, 0);
+  --color-primary-light: rgba(255, 175, 42, 0.5);
 
   --color-light: rgb(231, 243, 245);
 
@@ -53,7 +54,7 @@ body {
 
 .special-font {
   font-family: "Kaushan Script", cursive;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 }
 
 .search-container {
