@@ -76,6 +76,12 @@ span {
   font-size: 3.5rem;
   margin-left: 0;
 }
+
+.special-font_brand-top {
+  font-size: 4.5rem;
+  margin-left: 0;
+}
+
 .top-title {
   opacity: 0;
 }

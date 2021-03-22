@@ -70,7 +70,7 @@ const SideBar = () => {
             }
           >
             <ImSpoonKnife />
-            <span className="special-font special-font_brand">Recipes</span>
+            <span className="special-font special-font_brand-top">Recipes</span>
           </div>
 
           <CustomButton buttonLabel="Login" />
