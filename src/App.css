@@ -60,3 +60,14 @@ body {
 .search-container {
   max-width: 80%;
 }
+
+.home {
+  height: 80vh;
+  width: 80%;
+}
+
+.home h1 {
+  text-align: center;
+  color: var(--color-gray-3);
+  line-height: 150%;
+}

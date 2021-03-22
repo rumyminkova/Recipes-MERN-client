@@ -72,11 +72,10 @@ span {
   margin-left: 16px;
 }
 
-.brand-icon {
-  margin-left: 1.5rem;
-}
-
 .special-font_brand {
   font-size: 3.5rem;
   margin-left: 0;
+}
+.top-title {
+  opacity: 0;
 }

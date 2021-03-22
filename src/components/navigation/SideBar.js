@@ -11,17 +11,23 @@ import "./SideBar.css";
 
 const SIDEBAR_DATA = [
   {
+    id: 5,
+    path: "/",
+    text: "Home",
+    cName: "nav-text",
+  },
+  {
     id: 10,
     path: "/recipes/search",
     text: "Search Recipes",
     cName: "nav-text",
   },
-  {
-    id: 20,
-    path: "/recipes/search/byingredient",
-    text: "Recipes by Ingredients",
-    cName: "nav-text",
-  },
+  // {
+  //   id: 20,
+  //   path: "/recipes/search/byingredient",
+  //   text: "Recipes by Ingredients",
+  //   cName: "nav-text",
+  // },
   {
     id: 30,
     path: "/recipes/wine",
@@ -56,10 +62,16 @@ const SideBar = () => {
           <Link to="#" className="menu-bar">
             <VscThreeBars onClick={showSideBar} />
           </Link>
-          <span>
+          <div
+            className={
+              sideBar
+                ? "d-flex align-items-center top-title"
+                : "d-flex align-items-center"
+            }
+          >
             <ImSpoonKnife />
             <span className="special-font special-font_brand">Recipes</span>
-          </span>
+          </div>
 
           <CustomButton buttonLabel="Login" />
         </div>
