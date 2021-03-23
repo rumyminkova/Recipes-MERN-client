@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { fetchMeals } from "../actions/mealsActions";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import MealPlan from "../recipes/MealPlan";
 import GenerateMealForm from "../components/GenerateMealForm";
