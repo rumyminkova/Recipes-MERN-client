@@ -6,9 +6,9 @@ import "./MealPlan.css";
 const MealPlan = ({ meals }) => {
   return (
     <div>
-      <div className="container-fluid">
-        <div className="row justify-content-around mb-3">
-          <div className="col-12 col-md-3">
+      <div className="container my-5">
+        <div className="row justify-content-end">
+          <div className="col-12 col-md-5">
             <div className="d-flex justify-content-around align-items-center mealplan_info">
               <ul className="calories-info">
                 <li>Calories</li>
@@ -24,13 +24,13 @@ const MealPlan = ({ meals }) => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-md-9">
-            <div className="row justify-content-center">
-              {meals.meals.map((meal) => (
-                <RecipeCard recipe={meal} />
-              ))}
+        </div>
+        <div className="row justify-content-around my-5">
+          {meals.meals.map((meal) => (
+            <div className="col-12 col-md-6 col-lg-4" key={meal.id}>
+              <RecipeCard recipe={meal} />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

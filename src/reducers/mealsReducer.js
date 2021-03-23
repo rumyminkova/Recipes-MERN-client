@@ -1,6 +1,6 @@
 import * as ActionTypes from "../actions/actionTypes";
 
-const initState = { loading: false, meals: {}, error: null };
+const initState = { loading: false, meals: null, error: null };
 
 const mealsReducer = (state = initState, action) => {
   switch (action.type) {

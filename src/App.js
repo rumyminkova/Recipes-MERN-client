@@ -16,7 +16,7 @@ const App = () => {
         <SideBar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/recipes/search" component={RecipesSearchPage} />
+          <Route path="/recipes/search" exact component={RecipesSearchPage} />
           <Route path="/recipes/mealplan" component={MealPlanPage} />
           <Route path="/recipes/:recipeId" component={RecipeInfoPage} />
           <Redirect to="/" />
