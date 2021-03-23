@@ -26,6 +26,7 @@ const SearchForm = () => {
 
   return (
     <div className="container px-5 py-3 search-form_container">
+      <h2 className="text-center mx-auto mt-3 mb-5">Search Recipes</h2>
       <Form className="search-form" onSubmit={handleSubmit}>
         <Row form className="my-md-3 justify-content-around">
           <Col md={6} lg={5}>

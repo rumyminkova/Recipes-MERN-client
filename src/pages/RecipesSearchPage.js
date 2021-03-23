@@ -7,10 +7,6 @@ import SearchForm from "../components/SearchForm";
 const RecipesSearchPage = () => {
   const recipes = useSelector((state) => state.recipes);
 
-  useEffect(() => {
-    //   dispatch(fetchRecipes);
-  }, []);
-
   return (
     <>
       <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
