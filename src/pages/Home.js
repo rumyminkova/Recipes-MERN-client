@@ -1,5 +1,4 @@
 import React from "react";
-import { ImQuotesLeft } from "react-icons/im";
 
 const Home = () => {
   return (

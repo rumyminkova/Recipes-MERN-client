@@ -25,9 +25,9 @@ export const fetchMeals = ({ calories, diet, exclude }) => async (dispatch) => {
       "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate",
     params: {
       timeFrame: "day",
-      targetCalories: "2000",
-      diet: "vegetarian",
-      exclude: "shellfish, olives",
+      targetCalories: calories,
+      diet: diet,
+      exclude: exclude,
     },
     headers: API_HEADERS,
   };

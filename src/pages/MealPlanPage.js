@@ -1,29 +1,33 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-// import RecipesList from "../recipes/RecipesList";
+import { fetchMeals } from "../actions/mealsActions";
+
+import MealPlan from "../recipes/MealPlan";
 // import SearchForm from "../components/SearchForm";
 
 const MealsPlanPage = () => {
   const meals = useSelector((state) => state.meals);
-
-  useEffect(() => {
-    //   dispatch(fetchRecipes);
-  }, []);
+  const dispatch = useDispatch();
 
   return (
     <>
-      {/* <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
-        <SearchForm />
-      </div>
-      {recipes.isLoading ? (
-        <h1> Loading </h1>
-      ) : recipes.error ? (
-        <h1> {recipes.error} </h1>
-      ) : (
-        <RecipesList recipes={recipes.items} />
-      )} */}
       <h1> MealsPlan</h1>
+      <button
+        onClick={() =>
+          dispatch(fetchMeals({ calories: 2000, diet: "", exclude: "" }))
+        }
+      >
+        Meals
+      </button>
+
+      {meals.loading ? (
+        <h1> Loading </h1>
+      ) : meals.error ? (
+        <h1> {meals.error} </h1>
+      ) : (
+        <MealPlan meals={meals.meals} />
+      )}
     </>
   );
 };

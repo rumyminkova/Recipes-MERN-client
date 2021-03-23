@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Col, Row, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { DISH_TYPE, DIET, CUISINE } from "../shared/data";
 import CustomButton from "./CustomButton";

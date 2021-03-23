@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
-import { Navbar, NavbarText, NavItem, Nav, NavLink } from "reactstrap";
 
 import CustomButton from "../CustomButton";
 
@@ -22,12 +21,6 @@ const SIDEBAR_DATA = [
     text: "Search Recipes",
     cName: "nav-text",
   },
-  // {
-  //   id: 20,
-  //   path: "/recipes/search/byingredient",
-  //   text: "Recipes by Ingredients",
-  //   cName: "nav-text",
-  // },
   {
     id: 30,
     path: "/recipes/wine",
