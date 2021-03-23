@@ -29,13 +29,13 @@ const GenerateMealForm = () => {
         <Row form className="my-md-3 justify-content-around">
           <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
-              <Label for="searchTerm" sm={2}>
+              <Label for="calories" sm={2}>
                 Calories
               </Label>
               <Col sm={10}>
                 <Input
                   type="text"
-                  id="searchTerm"
+                  id="calories"
                   className="search-form_input"
                   placeholder="What is the caloric target for one day?"
                   value={formData.calories}
@@ -48,13 +48,13 @@ const GenerateMealForm = () => {
           </Col>
           <Col md={6} lg={5}>
             <FormGroup row className="align-items-center">
-              <Label for="diet" sm={2}>
+              <Label for="diet1" sm={2}>
                 Diet
               </Label>
               <Col sm={10}>
                 <Input
                   type="select"
-                  id="diet"
+                  id="diet1"
                   className="search-form_input"
                   value={formData.diet}
                   onChange={(e) =>

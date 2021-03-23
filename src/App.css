@@ -72,3 +72,14 @@ body {
   line-height: 150%;
   font-style: italic;
 }
+
+.recipe-card {
+  transition: all 0.4s;
+  background: white;
+}
+
+.recipe-card:hover {
+  box-shadow: var(--shadow-dark);
+  transform: translateY(-2px);
+  transition: all 0.4s;
+}

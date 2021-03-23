@@ -1,24 +1,13 @@
 .recipe_card_overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
   height: 30%;
-  color: var(--color-primary);
-  font-weight: 500;
-  font-size: 1.8rem;
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .recipe_card_title {
   color: var(--color-dark);
-  font-size: 2rem;
+  font-size: 1.9rem;
   text-align: center;
-}
-
-.recipe-card {
-  transition: all 0.4s;
-  background: white;
-}
-
-.recipe-card:hover {
-  box-shadow: var(--shadow-dark);
-  transform: translateY(-2px);
-  transition: all 0.4s;
 }
