@@ -4,6 +4,7 @@ import RecipeCard from "./recipe/RecipeCard";
 import "./MealPlan.css";
 
 const MealPlan = ({ meals }) => {
+  const names = ["Breakfast", "Lunch", "Dinner"];
   return (
     <div>
       <div className="container my-5">
@@ -25,9 +26,10 @@ const MealPlan = ({ meals }) => {
             </div>
           </div>
         </div>
-        <div className="row justify-content-around my-5">
-          {meals.meals.map((meal) => (
-            <div className="col-12 col-md-6 col-lg-4" key={meal.id}>
+        <div className="row justify-content-around mb-5">
+          {meals.meals.map((meal, i) => (
+            <div className="col-12 col-md-6 col-lg-4 mb-5" key={meal.id}>
+              <h1 className="text-center mt-5 mb-3">{names[i]}</h1>
               <RecipeCard recipe={meal} />
             </div>
           ))}

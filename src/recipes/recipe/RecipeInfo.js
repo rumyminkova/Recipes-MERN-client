@@ -1,6 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
+import { HiOutlineArrowLeft } from "react-icons/hi";
 
 import { RECIPE_TAGS } from "../../shared/data";
 import "./RecipeInfo.css";
@@ -68,6 +70,8 @@ const RenderTags = ({ recipe }) => {
 };
 
 const RecipeInfo = ({ recipe }) => {
+  const history = useHistory();
+
   if (recipe) {
     return (
       <>
@@ -77,6 +81,15 @@ const RecipeInfo = ({ recipe }) => {
         <div className="container recipe-main-container">
           <div className="row justify-content-center">
             <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
+              <span
+                className="goback-button"
+                onClick={() => {
+                  history.goBack();
+                }}
+              >
+                <HiOutlineArrowLeft className="mx-1" />
+                Back
+              </span>
               <div className="mx-3 my-5">
                 <p className="recipe-info_title text-center">{recipe.title}</p>
               </div>
