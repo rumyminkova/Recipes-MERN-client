@@ -7,7 +7,6 @@ import Loading from "../components/Loading";
 
 const MealsPlanPage = () => {
   const meals = useSelector((state) => state.meals);
-  console.log(meals);
   return (
     <>
       <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">

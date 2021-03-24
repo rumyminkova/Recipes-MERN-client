@@ -13,7 +13,7 @@ const RecipeInfoPage = () => {
 
   useEffect(() => {
     dispatch(fetchRecipe(recipeId));
-  }, []);
+  }, [recipeId]);
 
   return recipe.loading ? (
     <Loading />

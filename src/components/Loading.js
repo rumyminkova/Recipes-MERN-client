@@ -10,11 +10,7 @@ const Loading = () => {
     >
       <Spinner
         style={{ width: "5rem", height: "5rem", color: "rgb(255, 175, 42)" }}
-      />{" "}
-      {/* <Spinner
-        style={{ width: "3rem", height: "3rem", color: "rgb(255, 175, 42)" }}
-        type="grow"
-      /> */}
+      />
     </div>
   );
 };
