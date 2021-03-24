@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import RecipeInfo from "../recipes/recipe/RecipeInfo";
 import { fetchRecipe } from "../actions/recipeActions";
+import Loading from "../components/Loading";
 
 const RecipeInfoPage = () => {
   const recipeId = useParams().recipeId;
@@ -15,13 +16,12 @@ const RecipeInfoPage = () => {
   }, []);
 
   return recipe.loading ? (
-    <div>Loading</div>
+    <Loading />
   ) : recipe.error ? (
     <div> recipe.error</div>
   ) : (
     <RecipeInfo recipe={recipe.item} />
   );
-
 };
 
 export default RecipeInfoPage;

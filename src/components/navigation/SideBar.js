@@ -22,12 +22,6 @@ const SIDEBAR_DATA = [
     cName: "nav-text",
   },
   {
-    id: 30,
-    path: "/recipes/wine",
-    text: "Wine pairings",
-    cName: "nav-text",
-  },
-  {
     id: 35,
     path: "/recipes/mealplan",
     text: "Create a meal plan",
@@ -35,10 +29,17 @@ const SIDEBAR_DATA = [
   },
   {
     id: 40,
-    path: "/users/login",
-    text: "Cookbook",
+    path: "/recipes/wine",
+    text: "Wine pairings",
     cName: "nav-text",
   },
+
+  // {
+  //   id: 45,
+  //   path: "/users/login",
+  //   text: "Login",
+  //   cName: "nav-text",
+  // },
 ];
 
 const SideBar = () => {
@@ -55,13 +56,7 @@ const SideBar = () => {
           <Link to="#" className="menu-bar">
             <VscThreeBars onClick={showSideBar} />
           </Link>
-          <div
-            className={
-              sideBar
-                ? "d-flex align-items-center top-title"
-                : "d-flex align-items-center"
-            }
-          >
+          <div className="d-flex align-items-center">
             <ImSpoonKnife />
             <span className="special-font special-font_brand-top">Recipes</span>
           </div>

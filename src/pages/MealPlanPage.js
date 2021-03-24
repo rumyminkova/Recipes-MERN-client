@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import MealPlan from "../recipes/MealPlan";
 import GenerateMealForm from "../components/GenerateMealForm";
+import Loading from "../components/Loading";
 
 const MealsPlanPage = () => {
   const meals = useSelector((state) => state.meals);
@@ -13,7 +14,7 @@ const MealsPlanPage = () => {
         <GenerateMealForm />
       </div>
       {meals.loading ? (
-        <h1> Loading </h1>
+        <Loading />
       ) : meals.error ? (
         <h1> {meals.error} </h1>
       ) : meals.meals ? (

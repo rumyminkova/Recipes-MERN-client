@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import RecipesList from "../recipes/RecipesList";
 import SearchForm from "../components/SearchForm";
+import Loading from "../components/Loading";
 
 const RecipesSearchPage = () => {
   const recipes = useSelector((state) => state.recipes);
@@ -14,7 +15,7 @@ const RecipesSearchPage = () => {
       </div>
 
       {recipes.isLoading ? (
-        <h1> Loading </h1>
+        <Loading />
       ) : recipes.error ? (
         <h1> {recipes.error} </h1>
       ) : (
