@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
+import { CgMenuBoxed } from "react-icons/cg";
 import { IconContext } from "react-icons";
 
 import CustomButton from "../CustomButton";
@@ -52,7 +53,7 @@ const SideBar = () => {
       <IconContext.Provider
         value={{ color: "#ffaf2a", size: "3.5rem", verticalAlign: "middle" }}
       >
-        <div className="navbar">
+        <div className="navbar sticky-top">
           <Link to="#" className="menu-bar">
             <VscThreeBars onClick={showSideBar} />
           </Link>
@@ -69,8 +70,8 @@ const SideBar = () => {
               <Link to="#" className="menu-bars">
                 <VscClose />
               </Link>
-              <ImSpoonKnife className="ml-4" />
-              <span className="special-font special-font_brand">Recipes</span>
+              {/* <CgMenuBoxed className="ml-4" />
+              <span className="special-font special-font_brand">Menu</span> */}
             </li>
             {SIDEBAR_DATA.map((item) => (
               <li key={item.id} className={item.cName}>

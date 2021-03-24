@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 50;
 }
 
 .menu-bars {
@@ -73,7 +74,7 @@ span {
 }
 
 .special-font_brand {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-left: 0;
 }
 
