@@ -19,7 +19,7 @@ const RecipesSearchPage = () => {
       ) : recipes.error ? (
         <h1> {recipes.error} </h1>
       ) : (
-        <RecipesList recipes={recipes.items} />
+        <RecipesList recipes={recipes.items} showCalInfo={false} />
       )}
     </>
   );

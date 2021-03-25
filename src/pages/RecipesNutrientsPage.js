@@ -2,12 +2,13 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchRecipesByNutrients } from "../actions/nutrientsActions";
 
-// import RecipesList from "../recipes/RecipesList";
+import RecipesList from "../recipes/RecipesList";
 // import SearchForm from "../components/SearchForm";
 import Loading from "../components/Loading";
 
 const RecipesNutrients = () => {
   const recipes = useSelector((state) => state.nutrients);
+
   const formData = {
     minCalories: 0,
     maxCalories: 250,
@@ -27,14 +28,14 @@ const RecipesNutrients = () => {
       </button>
       {/* <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
         <SearchForm />
-      </div> */}
-      {/* {recipes.isLoading ? (
+      </div>  */}
+      {recipes.isLoading ? (
         <Loading />
       ) : recipes.error ? (
         <h1> {recipes.error} </h1>
       ) : (
-        <RecipesList recipes={recipes.items} />
-      )} */}
+        <RecipesList recipes={recipes.items} showCalInfo />
+      )}
     </>
   );
 };

@@ -36,7 +36,7 @@ export const fetchRecipesByNutrients = ({
       minCarbs: minCarbs,
       minProtein: minProtein,
       offset: "0",
-      number: "10",
+      number: "6",
       maxCalories: maxCalories,
       maxCarbs: maxCarbs,
       maxFat: maxFat,
