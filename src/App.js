@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import RecipeInfoPage from "./pages/RecipeInfoPage";
 import RecipesSearchPage from "./pages/RecipesSearchPage";
 import MealPlanPage from "./pages/MealPlanPage";
+import RecipesNutrients from "./pages/RecipesNutrientsPage";
 import SideBar from "./components/navigation/SideBar";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/recipes/search" exact component={RecipesSearchPage} />
           <Route path="/recipes/mealplan" exact component={MealPlanPage} />
-          <Route path="/recipes/wine" exact component={Home} />
+          <Route path="/recipes/nutrients" exact component={RecipesNutrients} />
           <Route path="/recipes/:recipeId" exact component={RecipeInfoPage} />
           <Redirect to="/" />
         </Switch>

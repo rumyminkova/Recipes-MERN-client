@@ -49,7 +49,7 @@ export const fetchRecipesByNutrients = ({
   try {
     const response = await axios.request(options);
     const data = await response.data;
-    dispatch(nutrientsSuccess(data.results));
+    dispatch(nutrientsSuccess(data));
   } catch (error) {
     dispatch(nutrientsFailed(error.message));
   }
