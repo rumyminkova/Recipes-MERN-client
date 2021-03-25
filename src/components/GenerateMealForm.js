@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Col, Row, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Col,
+  Row,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormFeedback,
+} from "reactstrap";
 
 import { DIET } from "../shared/data";
 import CustomButton from "./CustomButton";
@@ -11,14 +19,15 @@ const GenerateMealForm = () => {
   const initialFormState = {
     calories: "",
     diet: "",
+    errors: "",
   };
   const [formData, setFormData] = useState(initialFormState);
-
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchMeals(formData));
+    console.log(formData);
+    // dispatch(fetchMeals(formData));
     setFormData(initialFormState);
   };
 
@@ -43,6 +52,7 @@ const GenerateMealForm = () => {
                     setFormData({ ...formData, calories: e.target.value })
                   }
                 />
+                <FormFeedback>{formData.errors}</FormFeedback>
               </Col>
             </FormGroup>
           </Col>

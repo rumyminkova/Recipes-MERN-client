@@ -30,8 +30,8 @@ const SIDEBAR_DATA = [
   },
   {
     id: 40,
-    path: "/recipes/wine",
-    text: "Wine pairings",
+    path: "/recipes/nutrients",
+    text: "Recipes by Nutrients",
     cName: "nav-text",
   },
 
