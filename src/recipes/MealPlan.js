@@ -30,7 +30,7 @@ const MealPlan = ({ meals }) => {
           {meals.meals.map((meal, i) => (
             <div className="col-10 col-md-6 col-lg-4 mb-5" key={meal.id}>
               <h1 className="text-center mt-5 mb-3">{names[i]}</h1>
-              <RecipeCard recipe={meal} />
+              <RecipeCard recipe={meal} showCalInfo={false} />
             </div>
           ))}
         </div>

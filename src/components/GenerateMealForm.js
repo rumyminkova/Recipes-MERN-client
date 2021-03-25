@@ -45,7 +45,7 @@ const GenerateMealForm = () => {
                   type="text"
                   id="calories"
                   className="search-form_input"
-                  placeholder="Caloric target for one day?"
+                  placeholder="Caloric target for one day"
                   value={formData.calories}
                   onChange={(e) =>
                     setFormData({ ...formData, calories: e.target.value })

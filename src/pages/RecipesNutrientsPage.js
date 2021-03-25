@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchRecipesByNutrients } from "../actions/nutrientsActions";
 
 import RecipesList from "../recipes/RecipesList";
-// import SearchForm from "../components/SearchForm";
+import NutritionsForm from "../components/NutritionsForm";
 import Loading from "../components/Loading";
 
 const RecipesNutrients = () => {
@@ -26,9 +26,9 @@ const RecipesNutrients = () => {
       <button onClick={() => dispatch(fetchRecipesByNutrients(formData))}>
         Go
       </button>
-      {/* <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
-        <SearchForm />
-      </div>  */}
+      <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
+        <NutritionsForm />
+      </div>
       {recipes.isLoading ? (
         <Loading />
       ) : recipes.error ? (

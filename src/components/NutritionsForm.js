@@ -42,46 +42,70 @@ const NutritionsForm = () => {
       </h2>
       <Form className="search-form" onSubmit={handleSubmit}>
         <Row form className="my-md-3 justify-content-around">
-          <Col md={6} lg={5}>
+          <Col md={5} lg={4}>
             <FormGroup row className="align-items-center">
-              <Label for="calories" sm={2}>
-                Calories
-              </Label>
-              <Col sm={10}>
-                <Input
-                  type="text"
-                  id="calories"
-                  className="search-form_input"
-                  placeholder="Caloric target for one day?"
-                  value={formData.calories}
-                  onChange={(e) =>
-                    setFormData({ ...formData, calories: e.target.value })
-                  }
-                />
-                <FormFeedback>{formData.errors}</FormFeedback>
-              </Col>
+              <Label for="max-cal">Calories: {formData.maxCalories}</Label>
+              <Input
+                type="range"
+                name="max-cal"
+                id="max-cal"
+                min="0"
+                max="3000"
+                value={formData.maxCalories}
+                onChange={(e) =>
+                  setFormData({ ...formData, maxCalories: e.target.value })
+                }
+              />
             </FormGroup>
           </Col>
-          <Col md={6} lg={5}>
+          <Col md={5} lg={4}>
             <FormGroup row className="align-items-center">
-              <Label for="diet1" sm={2}>
-                Diet
-              </Label>
-              <Col sm={10}>
-                <Input
-                  type="select"
-                  id="diet1"
-                  className="search-form_input"
-                  value={formData.diet}
-                  onChange={(e) =>
-                    setFormData({ ...formData, diet: e.target.value })
-                  }
-                >
-                  {DIET.map((d) => (
-                    <option key={d}>{d}</option>
-                  ))}
-                </Input>
-              </Col>
+              <Label for="max-protein">Protein: {formData.maxProtein}</Label>
+              <Input
+                type="range"
+                name="max-protein"
+                id="max-protein"
+                min="0"
+                max="500"
+                value={formData.maxProtein}
+                onChange={(e) =>
+                  setFormData({ ...formData, maxProtein: e.target.value })
+                }
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+        <Row form className="my-md-3 justify-content-around">
+          <Col md={5} lg={4}>
+            <FormGroup row className="align-items-center">
+              <Label for="max-fat">Fat: {formData.maxFat}</Label>
+              <Input
+                type="range"
+                name="max-fat"
+                id="max-fat"
+                min="0"
+                max="500"
+                value={formData.maxFat}
+                onChange={(e) =>
+                  setFormData({ ...formData, maxFat: e.target.value })
+                }
+              />
+            </FormGroup>
+          </Col>
+          <Col md={5} lg={4}>
+            <FormGroup row className="align-items-center">
+              <Label for="max-carbs">Carbs: {formData.maxCarbs}</Label>
+              <Input
+                type="range"
+                name="max-carbs"
+                id="max-carbs"
+                min="0"
+                max="500"
+                value={formData.maxCarbs}
+                onChange={(e) =>
+                  setFormData({ ...formData, maxCarbs: e.target.value })
+                }
+              />
             </FormGroup>
           </Col>
         </Row>

@@ -43,6 +43,7 @@ export const fetchRecipesByNutrients = ({
       maxProtein: maxProtein,
       minFat: minFat,
       minCalories: minCalories,
+      random: "true",
     },
     headers: API_HEADERS,
   };
