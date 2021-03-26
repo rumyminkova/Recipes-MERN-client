@@ -42,7 +42,7 @@ body {
       rgba(255, 255, 255, 1)
     ),
     url(./images/home.jpg) no-repeat center/ cover;
-  height: 100vh;
+  height: 120vh;
 }
 
 .text-small-italic {
