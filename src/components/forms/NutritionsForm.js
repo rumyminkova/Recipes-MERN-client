@@ -22,7 +22,6 @@ const NutritionsForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchRecipesByNutrients(formData));
-    // setFormData(initialFormState);
   };
 
   return (

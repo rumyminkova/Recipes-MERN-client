@@ -27,7 +27,6 @@ const GenerateMealForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchMeals(formData));
-    setFormData(initialFormState);
   };
 
   return (

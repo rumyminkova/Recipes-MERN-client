@@ -8,7 +8,6 @@ import MealPlanPage from "./pages/MealPlanPage";
 import RecipesNutrients from "./pages/RecipesNutrientsPage";
 import SideBar from "./components/navigation/SideBar";
 import "./App.css";
-import Footer from "./components/Footer";
 
 const App = () => {
   return (

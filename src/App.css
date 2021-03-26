@@ -7,7 +7,7 @@
 
   --color-dark: #000000cc;
   --color-gray-1: #333333;
-  --color-gray-2: #464444;
+  --color-gray-2: #535151;
   --color-gray-3: #b6b5b5;
   --color-gray-light: rgba(255, 255, 255, 0.9);
 
@@ -37,7 +37,7 @@ body {
   line-height: 1.7;
   font-size: 1.6rem;
   background: linear-gradient(
-      rgba(255, 255, 255, 1),
+      rgba(133, 80, 80, 0),
       rgba(255, 255, 255, 0.6),
       rgba(255, 255, 255, 1)
     ),
@@ -68,7 +68,7 @@ body {
 
 .home h1 {
   text-align: center;
-  color: var(--color-gray-3);
+  color: var(--color-gray-light);
   line-height: 150%;
   font-style: italic;
 }

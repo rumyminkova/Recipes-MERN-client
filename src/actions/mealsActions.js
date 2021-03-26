@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import * as ActionTypes from "./actionTypes";
-import { API_HEADERS } from "../config";
+import { API_HOST } from "../config";
 
 const mealsLoading = () => ({
   type: ActionTypes.MEALS_LOADING,
@@ -29,7 +29,10 @@ export const fetchMeals = ({ calories, diet, exclude }) => async (dispatch) => {
       diet: diet,
       exclude: exclude,
     },
-    headers: API_HEADERS,
+    headers: {
+      "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+      "x-rapidapi-host": API_HOST,
+    },
   };
   try {
     const response = await axios.request(options);

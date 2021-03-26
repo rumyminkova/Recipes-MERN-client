@@ -21,7 +21,6 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(fetchRecipes(formData));
-    setFormData(initialFormState);
   };
 
   return (

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import * as ActionTypes from "./actionTypes";
-import { API_HEADERS } from "../config";
+import { API_HOST } from "../config";
 
 const recipeLoading = () => ({
   type: ActionTypes.RECIPE_LOADING,
@@ -22,7 +22,10 @@ export const fetchRecipe = (recipeId) => async (dispatch) => {
   const options = {
     method: "GET",
     url: `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${recipeId}/information`,
-    headers: API_HEADERS,
+    headers: {
+      "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+      "x-rapidapi-host": API_HOST,
+    },
   };
   try {
     const response = await axios.request(options);
