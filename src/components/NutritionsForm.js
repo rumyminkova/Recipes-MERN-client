@@ -9,21 +9,29 @@ import {
   Input,
   FormFeedback,
 } from "reactstrap";
+import InputRange from "react-input-range";
 
 import CustomButton from "./CustomButton";
 import { fetchRecipesByNutrients } from "../actions/nutrientsActions";
-import "./SearchForm.css";
+import "./NutritionsForm.css";
+import "react-input-range/lib/css/index.css";
 
 const NutritionsForm = () => {
+  // const initialFormState = {
+  //   minCalories: 0,
+  //   maxCalories: 0,
+  //   minCarbs: 0,
+  //   maxCarbs: 0,
+  //   minProtein: 0,
+  //   maxProtein: 0,
+  //   minFat: 0,
+  //   maxFat: 0,
+  // };
   const initialFormState = {
-    minCalories: 0,
-    maxCalories: 0,
-    minCarbs: 0,
-    maxCarbs: 0,
-    minProtein: 0,
-    maxProtein: 0,
-    minFat: 0,
-    maxFat: 0,
+    calories: { min: 0, max: 3000 },
+    carbs: { min: 0, max: 500 },
+    fat: { min: 0, max: 500 },
+    protein: { min: 0, max: 500 },
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -31,8 +39,9 @@ const NutritionsForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchRecipesByNutrients(formData));
-    setFormData(initialFormState);
+    console.log(formData);
+    // dispatch(fetchRecipesByNutrients(formData));
+    // setFormData(initialFormState);
   };
 
   return (
@@ -44,17 +53,27 @@ const NutritionsForm = () => {
         <Row form className="my-md-3 justify-content-around">
           <Col md={5} lg={4}>
             <FormGroup row className="align-items-center">
-              <Label for="max-cal">Calories: {formData.maxCalories}</Label>
-              <Input
+              <Label for="max-cal">Calories</Label>
+              {/* <Input
                 type="range"
                 name="max-cal"
                 id="max-cal"
                 min="0"
                 max="3000"
-                value={formData.maxCalories}
-                onChange={(e) =>
-                  setFormData({ ...formData, maxCalories: e.target.value })
+                value={formData.calories}
+                onChange={(value) =>
+                  setFormData({ ...formData, calories: value })
                 }
+              /> */}
+              <InputRange
+                draggableTrack
+                maxValue={3000}
+                minValue={0}
+                value={formData.calories}
+                onChange={(value) =>
+                  setFormData({ ...formData, calories: value })
+                }
+                onChangeComplete={(value) => console.log(value)}
               />
             </FormGroup>
           </Col>

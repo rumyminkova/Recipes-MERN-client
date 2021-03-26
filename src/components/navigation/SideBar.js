@@ -76,7 +76,7 @@ const SideBar = () => {
             {SIDEBAR_DATA.map((item) => (
               <li key={item.id} className={item.cName}>
                 <Link to={item.path}>
-                  <span>{item.text}</span>
+                  <span className="sidebar_span">{item.text}</span>
                 </Link>
               </li>
             ))}

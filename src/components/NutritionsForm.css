@@ -1,0 +1,38 @@
+.input-range {
+  height: 2rem !important;
+  margin: 2rem 1rem;
+}
+
+.input-range__track {
+  background: var(--color-gray-3) !important;
+  height: 0.5rem !important;
+}
+
+.input-range__slider {
+  height: 1.3rem !important;
+  width: 1.3rem !important;
+  margin-top: -0.85rem !important;
+}
+
+.input-range__track--active,
+.input-range__slider {
+  background: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+}
+
+.input-range__label--value {
+  position: absolute;
+  top: -3rem !important;
+}
+
+.input-range__label {
+  color: var(--color-dark) !important;
+  font-size: 1.3rem !important;
+  font-family: inherit !important;
+  font-weight: bold;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  bottom: -2rem !important;
+}
