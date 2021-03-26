@@ -10,9 +10,9 @@ import {
   FormFeedback,
 } from "reactstrap";
 
-import { DIET } from "../shared/data";
-import CustomButton from "./CustomButton";
-import { fetchMeals } from "../actions/mealsActions";
+import { DIET } from "../../shared/data";
+import CustomButton from "../CustomButton";
+import { fetchMeals } from "../../actions/mealsActions";
 import "./SearchForm.css";
 
 const GenerateMealForm = () => {

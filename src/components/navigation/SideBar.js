@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
-import { CgMenuBoxed } from "react-icons/cg";
 import { IconContext } from "react-icons";
 
 import CustomButton from "../CustomButton";

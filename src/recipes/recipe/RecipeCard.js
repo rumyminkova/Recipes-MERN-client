@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  CardImgOverlay,
-  CardImg,
-  CardTitle,
-  CardHeader,
-} from "reactstrap";
+import { Card, CardImgOverlay, CardImg, CardTitle } from "reactstrap";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 
 import { RECIPES_IMAGES } from "../../config";

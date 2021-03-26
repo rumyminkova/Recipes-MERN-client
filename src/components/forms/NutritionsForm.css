@@ -36,3 +36,7 @@
 .input-range__label--max {
   bottom: -2rem !important;
 }
+
+.nutrients-form label {
+  font-weight: bolder;
+}

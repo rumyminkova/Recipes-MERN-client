@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import RecipesList from "../recipes/RecipesList";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../components/forms/SearchForm";
 import Loading from "../components/Loading";
 
 const RecipesSearchPage = () => {

@@ -71,5 +71,5 @@ export const RECIPE_TAGS = [
   "ketogenic",
 ];
 
-const cooking =
-  'Photo by <a href="https://unsplash.com/@foodfaithfit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Taylor Kiser</a> on <a href="/s/photos/cooking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+// const cooking =
+//   'Photo by <a href="https://unsplash.com/@foodfaithfit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Taylor Kiser</a> on <a href="/s/photos/cooking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';

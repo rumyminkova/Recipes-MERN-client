@@ -18,14 +18,10 @@ export const nutrientsSuccess = (recipes) => ({
 });
 
 export const fetchRecipesByNutrients = ({
-  minCalories,
-  maxCalories,
-  minCarbs,
-  maxCarbs,
-  minProtein,
-  maxProtein,
-  minFat,
-  maxFat,
+  calories,
+  carbs,
+  fat,
+  protein,
 }) => async (dispatch) => {
   dispatch(nutrientsLoading());
   const options = {
@@ -33,16 +29,16 @@ export const fetchRecipesByNutrients = ({
     url:
       "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByNutrients",
     params: {
-      minCarbs: minCarbs,
-      minProtein: minProtein,
+      minCarbs: carbs.min,
+      minProtein: protein.min,
       offset: "0",
       number: "6",
-      maxCalories: maxCalories,
-      maxCarbs: maxCarbs,
-      maxFat: maxFat,
-      maxProtein: maxProtein,
-      minFat: minFat,
-      minCalories: minCalories,
+      maxCalories: calories.max,
+      maxCarbs: carbs.max,
+      maxFat: fat.max,
+      maxProtein: protein.max,
+      minFat: fat.min,
+      minCalories: calories.min,
       random: "true",
     },
     headers: API_HEADERS,

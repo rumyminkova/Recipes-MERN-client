@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import MealPlan from "../recipes/MealPlan";
-import GenerateMealForm from "../components/GenerateMealForm";
+import GenerateMealForm from "../components/forms/GenerateMealForm";
 import Loading from "../components/Loading";
 
 const MealsPlanPage = () => {
