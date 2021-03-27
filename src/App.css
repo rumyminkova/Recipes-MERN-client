@@ -86,3 +86,7 @@ body {
   transform: translateY(-2px);
   transition: all 0.4s;
 }
+
+.unsplash-text a {
+  color: var(--color-primary);
+}
