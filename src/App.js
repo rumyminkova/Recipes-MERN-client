@@ -11,7 +11,7 @@ import "./App.css";
 
 const App = () => {
   return (
-    <>
+    <div className="main-container">
       <BrowserRouter>
         <SideBar />
         <Switch>
@@ -23,7 +23,7 @@ const App = () => {
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>
-    </>
+    </div>
   );
 };
 

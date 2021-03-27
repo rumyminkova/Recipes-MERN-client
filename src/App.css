@@ -36,6 +36,9 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   line-height: 1.7;
   font-size: 1.6rem;
+}
+
+.main-container {
   background: linear-gradient(
       rgba(133, 80, 80, 0),
       rgba(255, 255, 255, 0.6),
