@@ -2,7 +2,7 @@
   height: 100vh;
   background: url(../images/preloader.jpg) fixed no-repeat center / cover;
   animation-name: anim;
-  animation-duration: 4s;
+  animation-duration: 3s;
 }
 
 .preloader-banner {
@@ -36,12 +36,11 @@
     transform: translateX(-100px);
     opacity: 0;
   }
-  30% {
+  50% {
     transform: translateX(0);
     opacity: 1;
   }
   100% {
-    transform: translateX(100px);
     opacity: 0;
   }
 }
