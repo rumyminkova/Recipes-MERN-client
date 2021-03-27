@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import * as ActionTypes from "./actionTypes";
-import { API_HOST } from "../config";
+import { API_HOST, API_KEY } from "../config";
 
 const nutrientsLoading = () => ({
   type: ActionTypes.NUTRIENTS_LOADING,
@@ -42,7 +42,7 @@ export const fetchRecipesByNutrients = ({
       random: "true",
     },
     headers: {
-      "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+      "x-rapidapi-key": API_KEY,
       "x-rapidapi-host": API_HOST,
     },
   };
