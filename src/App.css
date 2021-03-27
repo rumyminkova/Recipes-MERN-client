@@ -41,8 +41,8 @@ body {
       rgba(255, 255, 255, 0.6),
       rgba(255, 255, 255, 1)
     ),
-    url(./images/home.jpg) no-repeat center/ cover;
-  height: 120vh;
+    url(./images/home.jpg) no-repeat top/ cover;
+  height: 100vh;
 }
 
 .text-small-italic {

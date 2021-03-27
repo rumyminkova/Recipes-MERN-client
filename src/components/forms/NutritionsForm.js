@@ -39,7 +39,7 @@ const NutritionsForm = () => {
               <Label for="cal">Calories</Label>
               <InputRange
                 name="cal"
-                maxValue={3000}
+                maxValue={2000}
                 minValue={0}
                 value={formData.calories}
                 onChange={(value) =>
