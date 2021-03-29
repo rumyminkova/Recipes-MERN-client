@@ -8,3 +8,13 @@
 .search-form_input {
   font-size: 1.5rem;
 }
+
+.quickmenu-item_title {
+  font-size: 1.7rem;
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.quickmenu_img {
+  max-width: 20rem;
+}

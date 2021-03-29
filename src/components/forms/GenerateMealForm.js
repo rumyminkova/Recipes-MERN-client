@@ -13,7 +13,7 @@ import {
 import { DIET } from "../../shared/data";
 import CustomButton from "../CustomButton";
 import { fetchMeals } from "../../actions/mealsActions";
-import "./SearchForm.css";
+import "./Forms.css";
 
 const GenerateMealForm = () => {
   const initialFormState = {

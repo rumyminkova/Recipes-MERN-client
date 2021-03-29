@@ -71,5 +71,32 @@ export const RECIPE_TAGS = [
   "ketogenic",
 ];
 
+export const QUICK_MENU = [
+  {
+    id: 10,
+    name: "Chicken Recipes",
+    searchTerm: "chicken",
+    image: "images/chicken.jpg",
+  },
+  {
+    id: 20,
+    name: "Beef Recipes",
+    searchTerm: "beef",
+    image: "images/beef.jpg",
+  },
+  {
+    id: 30,
+    name: "Fish Recipes",
+    searchTerm: "fish",
+    image: "images/fish.jpg",
+  },
+  {
+    id: 40,
+    name: "Pasta Recipes",
+    searchTerm: "pasta",
+    image: "images/pasta.jpg",
+  },
+];
+
 // const cooking =
 //   'Photo by <a href="https://unsplash.com/@foodfaithfit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Taylor Kiser</a> on <a href="/s/photos/cooking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
