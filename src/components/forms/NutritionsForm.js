@@ -10,10 +10,10 @@ import "./NutritionsForm.css";
 
 const NutritionsForm = () => {
   const initialFormState = {
-    calories: { min: 0, max: 2000 },
-    carbs: { min: 0, max: 50 },
-    fat: { min: 0, max: 20 },
-    protein: { min: 0, max: 100 },
+    calories: { min: 0, max: 700 },
+    carbs: { min: 0, max: 100 },
+    fat: { min: 0, max: 10 },
+    protein: { min: 0, max: 25 },
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -27,7 +27,7 @@ const NutritionsForm = () => {
   return (
     <div className="container px-5 py-3 search-form_container">
       <h2 className="text-center mx-auto mt-3 mb-5">
-        Search Recipes by Nutrients
+        Search Recipe by Nutrients
       </h2>
       <Form className="nutrients-form" onSubmit={handleSubmit}>
         <Row form className="my-md-3 justify-content-around">
@@ -39,7 +39,7 @@ const NutritionsForm = () => {
               <Label for="cal">Calories</Label>
               <InputRange
                 name="cal"
-                maxValue={2000}
+                maxValue={1000}
                 minValue={0}
                 value={formData.calories}
                 onChange={(value) =>
@@ -57,7 +57,7 @@ const NutritionsForm = () => {
               <InputRange
                 name="protein"
                 draggableTrack
-                maxValue={200}
+                maxValue={50}
                 minValue={0}
                 value={formData.protein}
                 onChange={(value) =>
@@ -76,7 +76,7 @@ const NutritionsForm = () => {
               <Label for="fat">Fat</Label>
               <InputRange
                 name="fat"
-                maxValue={200}
+                maxValue={50}
                 minValue={0}
                 value={formData.fat}
                 onChange={(value) => setFormData({ ...formData, fat: value })}
