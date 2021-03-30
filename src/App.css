@@ -86,22 +86,51 @@ body {
   color: var(--color-primary);
 }
 
-.mypage-enter {
-  opacity: 0;
-  transform: translateX(-100%);
+.loader-bg {
+  height: 100vh;
+  background: url(./images/preloader.jpg) fixed no-repeat center / cover;
+  padding-bottom: 10rem;
+  animation-name: anim;
+  animation-duration: 2s;
 }
 
-.mypage-enter-active {
-  opacity: 1;
-  transform: translateX(0%);
-  transition: 300ms ease-out;
+.preloader-banner {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
-.mypage-exit {
-  opacity: 1;
+@keyframes anim {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.mypage-exit-active {
-  opacity: 0;
-  transition: 300ms ease-in;
+.preloader-text__2 {
+  font-size: 2rem;
+  font-weight: 350;
+}
+
+.preloader-font {
+  font-size: 7rem;
+  line-height: 10rem;
+  letter-spacing: 0.5rem;
+}
+
+.preloader-icon {
+  font-size: 6rem;
+  color: var(--color-primary);
+  vertical-align: middle;
+  padding-bottom: 1rem;
+}
+
+.loader_container {
+  padding-right: 10rem;
 }
