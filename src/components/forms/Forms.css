@@ -18,3 +18,11 @@
 .quickmenu_img {
   max-width: 20rem;
 }
+
+.quickmenu-img_overlay {
+  cursor: pointer;
+}
+
+.quickmenu-img_overlay:hover img {
+  background: var(--color-primary);
+}

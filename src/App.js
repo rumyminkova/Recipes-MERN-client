@@ -28,6 +28,7 @@ const App = () => {
         <div className="main-container">
           <BrowserRouter>
             <SideBar />
+
             <Switch>
               <Route path="/" exact component={Home} />
               <Route
@@ -46,6 +47,7 @@ const App = () => {
                 exact
                 component={RecipeInfoPage}
               />
+
               <Redirect to="/" />
             </Switch>
           </BrowserRouter>
