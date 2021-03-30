@@ -1,9 +1,6 @@
 .preloader-container {
   height: 100vh;
   background: url(../images/preloader.jpg) fixed no-repeat center / cover;
-  animation-name: anim;
-  animation-duration: 3s;
-  transition: 3s all;
 }
 
 .preloader-banner {
@@ -30,13 +27,4 @@
   color: var(--color-primary);
   vertical-align: middle;
   padding-bottom: 1rem;
-}
-
-@keyframes anim {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

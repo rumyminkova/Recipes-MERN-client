@@ -85,3 +85,23 @@ body {
 .unsplash-text a {
   color: var(--color-primary);
 }
+
+.mypage-enter {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.mypage-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: 300ms ease-out;
+}
+
+.mypage-exit {
+  opacity: 1;
+}
+
+.mypage-exit-active {
+  opacity: 0;
+  transition: 300ms ease-in;
+}

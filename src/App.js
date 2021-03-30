@@ -17,7 +17,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   return (
@@ -47,7 +47,6 @@ const App = () => {
                 exact
                 component={RecipeInfoPage}
               />
-
               <Redirect to="/" />
             </Switch>
           </BrowserRouter>
