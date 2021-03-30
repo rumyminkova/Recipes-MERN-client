@@ -1,6 +1,6 @@
 import * as ActionTypes from "../actions/actionTypes";
 
-const initState = { isLoading: false, item: {}, error: null };
+const initState = { loading: false, item: {}, error: null };
 
 const recipeReducer = (state = initState, action) => {
   switch (action.type) {

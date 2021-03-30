@@ -13,7 +13,7 @@ const RecipesNutrients = () => {
       <div className="d-flex justify-content-center align-items-center my-5 search-container mx-auto">
         <NutritionsForm />
       </div>
-      {recipes.isLoading ? (
+      {recipes.loading ? (
         <Loading />
       ) : recipes.error ? (
         <h1> {recipes.error} </h1>

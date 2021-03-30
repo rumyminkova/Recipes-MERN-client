@@ -8,7 +8,7 @@ const RecipesContainer = () => {
   const recipes = useSelector((state) => state.recipes);
   return (
     <>
-      {recipes.isLoading ? (
+      {recipes.loading ? (
         <Loading />
       ) : recipes.error ? (
         <h1 className="text-center"> {recipes.error} </h1>
