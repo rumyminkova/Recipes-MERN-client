@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import {
-  Col,
-  Row,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormFeedback,
-} from "reactstrap";
+import { Col, Row, Form, FormGroup, Label } from "reactstrap";
+import { useForm } from "react-hook-form";
 
 import { DIET } from "../../shared/data";
 import CustomButton from "../CustomButton";
@@ -16,41 +9,49 @@ import { fetchMeals } from "../../actions/mealsActions";
 import "./Forms.css";
 
 const GenerateMealForm = () => {
-  const initialFormState = {
-    calories: "",
-    diet: "",
-    errors: "",
-  };
-  const [formData, setFormData] = useState(initialFormState);
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(fetchMeals(formData));
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    dispatch(fetchMeals(data));
   };
 
   return (
     <div className="container px-5 py-3 search-form_container">
       <h2 className="text-center mx-auto mt-3 mb-5">Create a Meal Plan</h2>
-      <Form className="search-form" onSubmit={handleSubmit}>
+      <Form className="search-form" onSubmit={handleSubmit(onSubmit)}>
         <Row form className="my-md-3 justify-content-around">
           <Col md={6} lg={5}>
-            <FormGroup row className="align-items-center">
+            <FormGroup row className="align-items-start">
               <Label for="calories" sm={2}>
                 Calories
               </Label>
               <Col sm={10}>
-                <Input
+                <input
                   type="text"
                   id="calories"
-                  className="search-form_input"
+                  name="calories"
+                  ref={register({
+                    required: {
+                      value: true,
+                      message: "This field is required",
+                    },
+                    pattern: {
+                      value: /^[0-9]+$/,
+                      message: "Please enter a number",
+                    },
+                  })}
+                  className="search-form_input form-control"
                   placeholder="Caloric target for one day"
-                  value={formData.calories}
-                  onChange={(e) =>
-                    setFormData({ ...formData, calories: e.target.value })
-                  }
                 />
-                <FormFeedback>{formData.errors}</FormFeedback>
+
+                {errors.calories && (
+                  <p className="form-error-message">
+                    {errors.calories.message}
+                  </p>
+                )}
               </Col>
             </FormGroup>
           </Col>
@@ -60,19 +61,17 @@ const GenerateMealForm = () => {
                 Diet
               </Label>
               <Col sm={10}>
-                <Input
+                <select
                   type="select"
                   id="diet1"
-                  className="search-form_input"
-                  value={formData.diet}
-                  onChange={(e) =>
-                    setFormData({ ...formData, diet: e.target.value })
-                  }
+                  name="diet"
+                  className="search-form_input form-control"
+                  ref={register}
                 >
                   {DIET.map((d) => (
                     <option key={d}>{d}</option>
                   ))}
-                </Input>
+                </select>
               </Col>
             </FormGroup>
           </Col>
