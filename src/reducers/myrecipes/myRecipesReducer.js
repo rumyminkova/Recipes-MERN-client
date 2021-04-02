@@ -19,8 +19,17 @@ const myRecipesReducer = (state = initState, action) => {
         error: null,
       };
 
-    // case ActionTypes.MYRECIPES_DELETE:
-    //   return state.filter((favorite) => favorite !== action.payload);
+    case ActionTypes.MYRECIPES_DELETE: {
+      const newItems = state.items.filter(
+        (item) => item._id !== action.payload
+      );
+      return {
+        ...state,
+        loading: false,
+        items: newItems,
+        error: null,
+      };
+    }
 
     default:
       return state;

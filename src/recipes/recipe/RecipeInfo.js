@@ -48,6 +48,7 @@ const RecipeInfo = () => {
                 Back
               </span>
               <button onClick={addRecipe}>Add Recipe</button>
+              <button onClick={addRecipe}>Delete Recipe</button>
             </div>
             <div className="mx-3 my-5">
               <p className="recipe-info_title text-center">{recipe.title}</p>
