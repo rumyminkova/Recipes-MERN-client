@@ -6,6 +6,7 @@ import { ImSpoonKnife } from "react-icons/im";
 
 import Home from "./pages/Home";
 import RecipeInfoPage from "./pages/RecipeInfoPage";
+import MyRecipesPage from "./pages/MyRecipesPage";
 import RecipesSearchPage from "./pages/RecipesSearchPage";
 import MealPlanPage from "./pages/MealPlanPage";
 import RecipesNutrients from "./pages/RecipesNutrientsPage";
@@ -72,6 +73,7 @@ const App = () => {
                 exact
                 component={RecipeInfoPage}
               />
+              <Route path="/myrecipes" exact component={MyRecipesPage} />
               <Redirect to="/" />
             </Switch>
           </BrowserRouter>
