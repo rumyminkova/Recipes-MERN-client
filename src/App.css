@@ -133,3 +133,14 @@ body {
 .loader_container {
   padding-right: 10rem;
 }
+
+.myrecipes-container {
+  box-shadow: var(--shadow-dark);
+  border-radius: 0.5rem;
+  background-color: var(--color-gray-light);
+}
+
+.myrecipes_icon {
+  font-size: 3.5rem;
+  color: var(--color-primary);
+}

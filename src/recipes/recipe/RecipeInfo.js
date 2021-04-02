@@ -17,7 +17,7 @@ const RecipeInfo = () => {
   const dispatch = useDispatch();
 
   const addRecipe = () => {
-    const r = {
+    const newRecipe = {
       api_id: recipe.id,
       title: recipe.title,
       imageUrl: recipe.image,
@@ -25,7 +25,7 @@ const RecipeInfo = () => {
       readyInMinutes: recipe.readyInMinutes,
       userId: "12345",
     };
-    dispatch(postRecipe(r));
+    dispatch(postRecipe(newRecipe));
   };
 
   if (JSON.stringify(recipe) === "{}") {

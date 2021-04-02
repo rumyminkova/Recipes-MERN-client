@@ -5,7 +5,7 @@ import RecipesList from "./RecipesList";
 import Loading from "../components/Loading";
 
 const RecipesContainer = () => {
-  const recipes = useSelector((state) => state.recipes);
+  const recipes = useSelector((state) => state.recipes.items);
   return (
     <>
       {recipes.loading ? (
@@ -13,7 +13,7 @@ const RecipesContainer = () => {
       ) : recipes.error ? (
         <h1 className="text-center"> {recipes.error} </h1>
       ) : (
-        <RecipesList recipes={recipes.items} showCalInfo={false} />
+        <RecipesList recipes={recipes} showCalInfo={false} />
       )}
     </>
   );
