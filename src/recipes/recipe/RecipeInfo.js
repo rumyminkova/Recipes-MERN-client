@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs";
@@ -6,6 +7,8 @@ import { HiOutlineArrowLeft } from "react-icons/hi";
 
 import { RECIPE_TAGS } from "../../shared/data";
 import "./RecipeInfo.css";
+
+import { postRecipe } from "../../actions/myrecipes/myrecipesActions";
 
 const RenderIngredients = ({ ingredients }) => {
   if (ingredients && ingredients.length) {
@@ -69,8 +72,23 @@ const RenderTags = ({ recipe }) => {
   );
 };
 
-const RecipeInfo = ({ recipe }) => {
+const RecipeInfo = () => {
   const history = useHistory();
+  const recipe = useSelector((state) => state.recipe.item);
+
+  const dispatch = useDispatch();
+
+  const addRecipe = () => {
+    const r = {
+      api_id: recipe.id,
+      title: recipe.title,
+      imageUrl: recipe.image,
+      servings: recipe.servings,
+      readyInMinutes: recipe.readyInMinutes,
+      userId: "12345",
+    };
+    dispatch(postRecipe(r));
+  };
 
   if (JSON.stringify(recipe) === "{}") {
     return <div>No info was found </div>;
@@ -78,6 +96,8 @@ const RecipeInfo = ({ recipe }) => {
 
   return (
     <>
+      <button onClick={addRecipe}>Add Recipe</button>
+
       <div className="container recipe-main-container">
         <div className="row justify-content-center">
           <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">

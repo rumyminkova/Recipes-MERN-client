@@ -20,7 +20,7 @@ const RecipeInfoPage = () => {
   ) : recipe.error ? (
     <div> recipe.error</div>
   ) : (
-    <RecipeInfo recipe={recipe.item} />
+    <RecipeInfo />
   );
 };
 

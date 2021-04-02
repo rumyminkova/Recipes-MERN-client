@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
 
 import CustomButton from "../CustomButton";
+
+import { fetchMyRecipes } from "../../actions/myrecipes/myrecipesActions";
 
 import "./SideBar.css";
 
@@ -47,6 +50,13 @@ const SideBar = () => {
 
   const showSideBar = () => setSideBar(!sideBar);
 
+  const dispatch = useDispatch();
+
+  const getRecipes = () => {
+    const recipes = dispatch(fetchMyRecipes());
+    console.log(recipes);
+  };
+
   return (
     <>
       <IconContext.Provider
@@ -61,7 +71,9 @@ const SideBar = () => {
             <span className="special-font special-font_brand-top">Recipes</span>
           </div>
 
-          <CustomButton buttonLabel="Login" />
+          {/* <CustomButton buttonLabel="Login"/> */}
+
+          <button onClick={getRecipes}> Fetch </button>
         </div>
         <nav className={sideBar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items" onClick={showSideBar}>
