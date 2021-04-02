@@ -36,6 +36,13 @@ const SIDEBAR_DATA = [
     text: "Recipes by Nutrients",
     cName: "nav-text",
   },
+  {
+    id: 50,
+    // path: "/users/:userId/myrecipes",
+    path: "/myrecipes",
+    text: "My Recipes",
+    cName: "nav-text",
+  },
 
   // {
   //   id: 45,
