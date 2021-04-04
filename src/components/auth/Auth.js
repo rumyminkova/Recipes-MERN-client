@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Col,
-  Row,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import { Container, Col, Row, Form, Button } from "reactstrap";
 import { AiFillLock } from "react-icons/ai";
 
 import CustomInput from "./CustomInput";
@@ -16,13 +7,18 @@ import CustomButton from "../CustomButton";
 
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
 
   const handleShowPassword = () =>
     setShowPassword((prevShowPassword) => !prevShowPassword);
+
+  const switchMode = () => {
+    setIsSignUp((prevIsSignUp) => !prevIsSignUp);
+    handleShowPassword(false);
+  };
+
   const handleSubmit = () => {};
   const handleChange = () => {};
-
-  const isSignUp = true;
 
   return (
     <Container className="my-5">
@@ -70,6 +66,13 @@ const Auth = () => {
             )}
             <div className="text-center mt-3">
               <CustomButton buttonLabel={isSignUp ? "Sign Up" : "Sign In"} />
+            </div>
+            <div className="my-3 d-flex justify-content-end">
+              <a onClick={switchMode} className="btn btn-lg sign-in-up-btn">
+                {isSignUp
+                  ? "Already have an account? Sign In"
+                  : "Don't have an account? Sign Up"}
+              </a>
             </div>
           </Form>
         </Col>

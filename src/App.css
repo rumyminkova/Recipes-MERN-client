@@ -144,3 +144,14 @@ body {
   font-size: 3.5rem;
   color: var(--color-primary);
 }
+
+.sign-in-up-btn {
+  color: var(--color-dark);
+  font-size: 1.5rem;
+  transition: 0.3s all;
+}
+
+.sign-in-up-btn:hover {
+  color: var(--color-primary-dark);
+  transition: 0.3s all;
+}
