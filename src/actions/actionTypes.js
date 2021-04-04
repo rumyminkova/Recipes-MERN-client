@@ -19,3 +19,6 @@ export const MYRECIPES_FAILED = "MYRECIPES_FAILED";
 export const MYRECIPES_SUCCESS = "MYRECIPES_SUCCESS";
 export const MYRECIPES_ADD = "MYRECIPES_ADD";
 export const MYRECIPES_DELETE = "MYRECIPES_DELETE";
+
+export const AUTH = "AUTH";
+export const LOGOUT = "LOGOUT";

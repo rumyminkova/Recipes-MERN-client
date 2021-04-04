@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Container, Col, Row, Form, Button } from "reactstrap";
 import { AiFillLock } from "react-icons/ai";
+import { FcGoogle } from "react-icons/fc";
+import { GoogleLogin } from "react-google-login";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import CustomInput from "./CustomInput";
 import CustomButton from "../CustomButton";
@@ -8,6 +12,9 @@ import CustomButton from "../CustomButton";
 const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleShowPassword = () =>
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -19,6 +26,21 @@ const Auth = () => {
 
   const handleSubmit = () => {};
   const handleChange = () => {};
+
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+    try {
+      dispatch({ type: "AUTH", payload: { result, token } });
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const googleFailure = (err) => {
+    console.log("Google sign in Failed", err);
+  };
 
   return (
     <Container className="my-5">
@@ -74,6 +96,28 @@ const Auth = () => {
                   : "Don't have an account? Sign Up"}
               </a>
             </div>
+            <GoogleLogin
+              clientId="354499793369-arifnvbatuha7ojpqucagh3qmtbich5v.apps.googleusercontent.com"
+              render={(renderProps) => (
+                <Button
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  block
+                  outline
+                  color="secondary"
+                  className="btn-lg my-5"
+                >
+                  <FcGoogle
+                    size="2rem"
+                    style={{ verticalAlign: "middle", marginRight: "0.5rem" }}
+                  />
+                  Google Sign In
+                </Button>
+              )}
+              onSuccess={googleSuccess}
+              onFailure={googleFailure}
+              cookiePolicy={"single_host_origin"}
+            />
           </Form>
         </Col>
       </Row>

@@ -6,7 +6,6 @@ import {
   Input,
   InputGroup,
   InputGroupAddon,
-  Button,
 } from "reactstrap";
 
 const CustomInput = (props) => {
@@ -22,7 +21,7 @@ const CustomInput = (props) => {
           onChange={props.handleChange}
           required
         />
-        {props.name === "password" && (
+        {props.name === "password" ? (
           <InputGroupAddon addonType="append">
             <span className="ml-3" onClick={props.handleShowPassword}>
               {props.type === "password" ? (
@@ -35,7 +34,7 @@ const CustomInput = (props) => {
               )}
             </span>
           </InputGroupAddon>
-        )}
+        ) : null}
       </InputGroup>
     </FormGroup>
   );

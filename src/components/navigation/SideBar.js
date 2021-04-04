@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
@@ -51,9 +51,14 @@ const SIDEBAR_DATA = [
 
 const SideBar = () => {
   const [sideBar, setSideBar] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
   const showSideBar = () => setSideBar(!sideBar);
 
-  const user = null;
+  useEffect(() => {
+    const token = user?.token;
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, []);
 
   return (
     <>
@@ -74,7 +79,7 @@ const SideBar = () => {
           >
             {user ? (
               <div>
-                <span> {user.name}</span>
+                <span> {user.result.name}</span>
                 <button>Logout</button>
               </div>
             ) : (
