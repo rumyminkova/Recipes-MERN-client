@@ -11,6 +11,7 @@ import RecipesSearchPage from "./pages/RecipesSearchPage";
 import MealPlanPage from "./pages/MealPlanPage";
 import RecipesNutrients from "./pages/RecipesNutrientsPage";
 import SideBar from "./components/navigation/SideBar";
+import Auth from "./components/auth/Auth";
 import "./App.css";
 
 const App = () => {
@@ -54,7 +55,6 @@ const App = () => {
         <div className="main-container">
           <BrowserRouter>
             <SideBar />
-
             <Switch>
               <Route path="/" exact component={Home} />
               <Route
@@ -73,6 +73,7 @@ const App = () => {
                 exact
                 component={RecipeInfoPage}
               />
+              <Route path="/auth" exact component={Auth} />
               <Route path="/myrecipes" exact component={MyRecipesPage} />
               <Redirect to="/" />
             </Switch>

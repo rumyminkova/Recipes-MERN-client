@@ -41,15 +41,15 @@ export const postRecipe = (recipe) => async (dispatch) => {
   }
 };
 
-export const deleteRecipe = (recipeId) => ({
+export const deleteRecipe = (recipeApiId) => ({
   type: ActionTypes.MYRECIPES_DELETE,
-  payload: recipeId,
+  payload: recipeApiId,
 });
 
-export const deleteMyRecipe = (recipeId) => async (dispatch) => {
+export const deleteMyRecipe = (recipeApiId) => async (dispatch) => {
   try {
-    await axios.delete(`${MY_SERVER_URL}/${recipeId}`);
-    dispatch(deleteRecipe(recipeId));
+    await axios.delete(`${MY_SERVER_URL}/${recipeApiId}`);
+    dispatch(deleteRecipe(recipeApiId));
   } catch (error) {
     console.log(error.message);
   }

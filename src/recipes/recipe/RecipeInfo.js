@@ -6,7 +6,10 @@ import { HiOutlineArrowLeft } from "react-icons/hi";
 
 import "./RecipeInfo.css";
 
-import { postRecipe } from "../../actions/myrecipes/myrecipesActions";
+import {
+  postRecipe,
+  deleteMyRecipe,
+} from "../../actions/myrecipes/myrecipesActions";
 import RenderIngredients from "./RenderIngredients";
 import RenderDirections from "./RenderDirections";
 import RenderTags from "./RenderTags";
@@ -26,6 +29,10 @@ const RecipeInfo = () => {
       userId: "12345",
     };
     dispatch(postRecipe(newRecipe));
+  };
+
+  const deleteRecipe = () => {
+    dispatch(deleteMyRecipe(recipe.id));
   };
 
   if (JSON.stringify(recipe) === "{}") {
@@ -48,7 +55,7 @@ const RecipeInfo = () => {
                 Back
               </span>
               <button onClick={addRecipe}>Add Recipe</button>
-              <button onClick={addRecipe}>Delete Recipe</button>
+              <button onClick={deleteRecipe}>Delete Recipe</button>
             </div>
             <div className="mx-3 my-5">
               <p className="recipe-info_title text-center">{recipe.title}</p>

@@ -21,7 +21,7 @@ const myRecipesReducer = (state = initState, action) => {
 
     case ActionTypes.MYRECIPES_DELETE: {
       const newItems = state.items.filter(
-        (item) => item._id !== action.payload
+        (item) => item.api_id !== action.payload
       );
       return {
         ...state,
