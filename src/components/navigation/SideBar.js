@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
+import { useDispatch } from "react-redux";
 
 import CustomButton from "../CustomButton";
 
@@ -53,12 +54,22 @@ const SideBar = () => {
   const [sideBar, setSideBar] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
+
   const showSideBar = () => setSideBar(!sideBar);
 
   useEffect(() => {
-    const token = user?.token;
+    // const token = user?.token;
     setUser(JSON.parse(localStorage.getItem("profile")));
-  }, []);
+  }, [location]);
+
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+    history.push("/");
+    setUser(null);
+  };
 
   return (
     <>
@@ -80,7 +91,7 @@ const SideBar = () => {
             {user ? (
               <div>
                 <span> {user.result.name}</span>
-                <button>Logout</button>
+                <button onClick={logout}>Logout</button>
               </div>
             ) : (
               <Link to="/auth" className="btn btn-info">
