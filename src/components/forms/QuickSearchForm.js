@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { QUICK_MENU } from "../../shared/data";
 import QuickMenuItem from "./QuickMenuItem";
-import { fetchRecipes } from "../../actions/recipesActions";
+import { fetchRecipes } from "../../actions/recipes/recipesActions";
 import "./Forms.css";
 
 const QuickSearchForm = () => {

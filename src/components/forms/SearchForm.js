@@ -4,7 +4,7 @@ import { Col, Row, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { DISH_TYPE, DIET, CUISINE } from "../../shared/data";
 import CustomButton from "../CustomButton";
-import { fetchRecipes } from "../../actions/recipesActions";
+import { fetchRecipes } from "../../actions/recipes/recipesActions";
 import "./Forms.css";
 
 const SearchForm = () => {

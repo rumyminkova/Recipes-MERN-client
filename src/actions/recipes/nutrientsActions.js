@@ -1,7 +1,7 @@
 import axios from "axios";
 
-import * as ActionTypes from "./actionTypes";
-import { API_HOST, API_KEY } from "../config";
+import * as ActionTypes from "../actionTypes";
+import { API_HOST, API_KEY } from "../../config";
 
 const nutrientsLoading = () => ({
   type: ActionTypes.NUTRIENTS_LOADING,

@@ -9,10 +9,18 @@ import { useHistory } from "react-router-dom";
 import { GOOGLE_CLIENT_ID } from "../../config";
 import CustomInput from "./CustomInput";
 import CustomButton from "../CustomButton";
+import { signin, signup } from "../../actions/auth/auth";
 
 const Auth = () => {
+  const formInitialState = {
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
+  const [formData, setFormData] = useState(formInitialState);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,8 +33,20 @@ const Auth = () => {
     handleShowPassword(false);
   };
 
-  const handleSubmit = () => {};
-  const handleChange = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    if (isSignUp) {
+      dispatch(signup(formData, history));
+    } else {
+      dispatch(signin(formData, history));
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
+  };
 
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
@@ -53,7 +73,7 @@ const Auth = () => {
           <h2 className="text-center mb-5">
             {isSignUp ? "Sign Up" : "Sign In"}
           </h2>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             {isSignUp && (
               <CustomInput
                 type="text"
@@ -88,7 +108,10 @@ const Auth = () => {
               />
             )}
             <div className="text-center mt-3">
-              <CustomButton buttonLabel={isSignUp ? "Sign Up" : "Sign In"} />
+              <CustomButton
+                buttonLabel={isSignUp ? "Sign Up" : "Sign In"}
+                type="submit"
+              />
             </div>
             <div className="my-3 d-flex justify-content-end">
               <a onClick={switchMode} className="btn btn-lg sign-in-up-btn">

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import RecipeInfo from "../recipes/recipe/RecipeInfo";
-import { fetchRecipe } from "../actions/recipeActions";
+import { fetchRecipe } from "../actions/recipes/recipeActions";
 import Loading from "../components/Loading";
 
 const RecipeInfoPage = () => {

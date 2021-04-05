@@ -5,7 +5,7 @@ import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 
 import CustomButton from "../CustomButton";
-import { fetchRecipesByNutrients } from "../../actions/nutrientsActions";
+import { fetchRecipesByNutrients } from "../../actions/recipes/nutrientsActions";
 import "./NutritionsForm.css";
 
 const NutritionsForm = () => {

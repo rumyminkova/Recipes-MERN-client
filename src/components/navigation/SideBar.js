@@ -109,7 +109,7 @@ const SideBar = () => {
               </div>
             ) : (
               <Link to="/auth" className="btn custom-button">
-                Login
+                Sign in
               </Link>
             )}
           </div>

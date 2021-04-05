@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 import { DIET } from "../../shared/data";
 import CustomButton from "../CustomButton";
-import { fetchMeals } from "../../actions/mealsActions";
+import { fetchMeals } from "../../actions/recipes/mealsActions";
 import "./Forms.css";
 
 const GenerateMealForm = () => {
