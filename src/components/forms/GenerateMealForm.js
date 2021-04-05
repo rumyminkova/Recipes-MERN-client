@@ -78,7 +78,7 @@ const GenerateMealForm = () => {
         </Row>
 
         <Row className="justify-content-center">
-          <CustomButton buttonLabel="Generate" />
+          <CustomButton buttonLabel="Generate" type="submit" />
         </Row>
       </Form>
     </div>

@@ -119,7 +119,9 @@ const SearchForm = () => {
         </Row>
 
         <Row className="justify-content-center">
-          <CustomButton buttonLabel="Search">Search</CustomButton>
+          <CustomButton buttonLabel="Search" type="submit">
+            Search
+          </CustomButton>
         </Row>
       </Form>
     </div>

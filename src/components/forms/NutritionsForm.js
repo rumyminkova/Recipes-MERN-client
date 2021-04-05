@@ -101,7 +101,7 @@ const NutritionsForm = () => {
         </Row>
 
         <Row className="justify-content-center">
-          <CustomButton buttonLabel="Search" />
+          <CustomButton buttonLabel="Search" type="submit" />
         </Row>
       </Form>
     </div>
