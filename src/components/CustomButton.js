@@ -2,10 +2,10 @@ import React from "react";
 
 import "./CustomButton.css";
 
-const CustomButton = ({ buttonLabel }) => {
+const CustomButton = (props) => {
   return (
-    <button className="submit-button" type="submit">
-      {buttonLabel}
+    <button className="custom-button" type={props.type} onClick={props.onClick}>
+      {props.buttonLabel}
     </button>
   );
 };

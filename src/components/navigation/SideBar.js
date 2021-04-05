@@ -74,27 +74,41 @@ const SideBar = () => {
   return (
     <>
       <IconContext.Provider
-        value={{ color: "#ffaf2a", size: "3.5rem", verticalAlign: "middle" }}
+        value={{ color: "#ffaf2a", size: "3rem", verticalAlign: "middle" }}
       >
         <div className="navbar sticky-top">
-          <Link to="#" className="menu-bar">
-            <VscThreeBars onClick={showSideBar} />
-          </Link>
+          <div className="mr-1">
+            <Link to="#" className="menu-bar">
+              <VscThreeBars onClick={showSideBar} />
+            </Link>
+          </div>
           <div className="d-flex align-items-center">
             <ImSpoonKnife />
             <span className="special-font special-font_brand-top">Recipes</span>
           </div>
           <div
-            className="container d-flex justify-content-center
+            className="d-flex justify-content-center
           align-items-center"
           >
             {user ? (
-              <div>
-                <span> {user.result.name}</span>
-                <button onClick={logout}>Logout</button>
+              <div
+                className="d-flex flex-column justify-content-center
+             align-items-center"
+              >
+                <span
+                  className="user-name d-inline-block text-truncate"
+                  style={{ maxWidth: "95%" }}
+                >
+                  {user.result.name}
+                </span>
+                <CustomButton
+                  onClick={logout}
+                  type="button"
+                  buttonLabel="Logout"
+                />
               </div>
             ) : (
-              <Link to="/auth" className="btn btn-info">
+              <Link to="/auth" className="btn custom-button">
                 Login
               </Link>
             )}

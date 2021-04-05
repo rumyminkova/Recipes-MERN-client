@@ -1,7 +1,8 @@
 .navbar {
   background: white;
-  height: 10vh;
+  height: 12vh;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   z-index: 20;
@@ -79,10 +80,15 @@
 }
 
 .special-font_brand-top {
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin-left: 0;
 }
 
 .top-title {
   opacity: 0;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  text-align: right;
 }

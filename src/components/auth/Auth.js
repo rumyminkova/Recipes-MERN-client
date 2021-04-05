@@ -6,6 +6,7 @@ import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
+import { GOOGLE_CLIENT_ID } from "../../config";
 import CustomInput from "./CustomInput";
 import CustomButton from "../CustomButton";
 
@@ -97,7 +98,7 @@ const Auth = () => {
               </a>
             </div>
             <GoogleLogin
-              clientId="354499793369-arifnvbatuha7ojpqucagh3qmtbich5v.apps.googleusercontent.com"
+              clientId={GOOGLE_CLIENT_ID}
               render={(renderProps) => (
                 <Button
                   onClick={renderProps.onClick}
