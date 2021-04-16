@@ -18,17 +18,19 @@ const RecipeInfo = () => {
   const history = useHistory();
   const recipe = useSelector((state) => state.recipe.item);
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("profile"));
 
   const addRecipe = () => {
-    const newRecipe = {
-      api_id: recipe.id,
-      title: recipe.title,
-      imageUrl: recipe.image,
-      servings: recipe.servings,
-      readyInMinutes: recipe.readyInMinutes,
-      userId: "12345",
-    };
-    dispatch(postRecipe(newRecipe));
+    if (user?.result?.email) {
+      const newRecipe = {
+        api_id: recipe.id,
+        title: recipe.title,
+        imageUrl: recipe.image,
+        servings: recipe.servings,
+        readyInMinutes: recipe.readyInMinutes,
+      };
+      dispatch(postRecipe(newRecipe));
+    }
   };
 
   const deleteRecipe = () => {

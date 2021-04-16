@@ -27,10 +27,13 @@ const CustomInput = (props) => {
               {props.type === "password" ? (
                 <VscEyeClosed
                   size="1.7rem"
-                  style={{ verticalAlign: "middle" }}
+                  style={{ verticalAlign: "middle", cursor: "pointer" }}
                 />
               ) : (
-                <VscEye size="1.7rem" style={{ verticalAlign: "middle" }} />
+                <VscEye
+                  size="1.7rem"
+                  style={{ verticalAlign: "middle", cursor: "pointer" }}
+                />
               )}
             </span>
           </InputGroupAddon>

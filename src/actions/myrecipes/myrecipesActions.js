@@ -1,4 +1,5 @@
 import axios from "axios";
+import * as api from "../../api/index.js";
 
 import * as ActionTypes from "../actionTypes";
 import { MY_SERVER_URL } from "../../config";
@@ -20,7 +21,7 @@ export const myRecipesSuccess = (recipes) => ({
 export const fetchMyRecipes = () => async (dispatch) => {
   dispatch(myRecipesLoading());
   try {
-    const { data } = await axios.get(MY_SERVER_URL);
+    const { data } = await api.fetchMyRecipes();
     dispatch(myRecipesSuccess(data));
   } catch (error) {
     dispatch(myRecipesFailed(error.message));
@@ -34,10 +35,10 @@ export const addRecipe = (recipe) => ({
 
 export const postRecipe = (recipe) => async (dispatch) => {
   try {
-    const { data } = await axios.post(MY_SERVER_URL, recipe);
+    const data = await api.saveRecipe(recipe);
     dispatch(addRecipe(data));
   } catch (error) {
-    console.log(error.message);
+    dispatch(myRecipesFailed(error.message));
   }
 };
 

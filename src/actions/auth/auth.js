@@ -1,9 +1,11 @@
 import { AUTH } from "../actionTypes";
+import * as api from "../../api/index.js";
 
 export const signin = (formData, history) => async (dispatch) => {
   try {
-    //user login
-    history.push("/");
+    const { data } = await api.signin(formData);
+    dispatch({ type: AUTH, payload: data });
+    history.push(history);
   } catch (err) {
     console.log(err);
   }
@@ -11,8 +13,9 @@ export const signin = (formData, history) => async (dispatch) => {
 
 export const signup = (formData, history) => async (dispatch) => {
   try {
-    //user signup
-    history.push("/");
+    const { data } = await api.signup(formData);
+    dispatch({ type: AUTH, payload: data });
+    history.push(history);
   } catch (err) {
     console.log(err);
   }

@@ -30,12 +30,11 @@ const Auth = () => {
 
   const switchMode = () => {
     setIsSignUp((prevIsSignUp) => !prevIsSignUp);
-    handleShowPassword(false);
+    setShowPassword(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     if (isSignUp) {
       dispatch(signup(formData, history));
     } else {
@@ -45,7 +44,6 @@ const Auth = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
   };
 
   const googleSuccess = async (res) => {
@@ -66,7 +64,7 @@ const Auth = () => {
   return (
     <Container className="my-5">
       <Row className="justify-content-center">
-        <Col xs={10} md={6} lg={5} className="bg-light p-5">
+        <Col xs={10} md={6} lg={5} className="bg-light p-4">
           <p className="text-center mb-4">
             <AiFillLock size="3rem" style={{ color: "#ffaf2a" }} />
           </p>
@@ -120,7 +118,7 @@ const Auth = () => {
                   : "Don't have an account? Sign Up"}
               </a>
             </div>
-            <GoogleLogin
+            {/* <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}
               render={(renderProps) => (
                 <Button
@@ -141,7 +139,7 @@ const Auth = () => {
               onSuccess={googleSuccess}
               onFailure={googleFailure}
               cookiePolicy={"single_host_origin"}
-            />
+            /> */}
           </Form>
         </Col>
       </Row>

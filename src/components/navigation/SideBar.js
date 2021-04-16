@@ -4,6 +4,7 @@ import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
 import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
 
 import CustomButton from "../CustomButton";
 
@@ -36,16 +37,8 @@ const SIDEBAR_DATA = [
   },
   {
     id: 50,
-    // path: "/users/:userId/myrecipes",
     path: "/myrecipes",
     text: "My Recipes",
-    cName: "nav-text",
-  },
-
-  {
-    id: 45,
-    path: "/auth",
-    text: "Login In",
     cName: "nav-text",
   },
 ];
@@ -60,16 +53,20 @@ const SideBar = () => {
 
   const showSideBar = () => setSideBar(!sideBar);
 
-  useEffect(() => {
-    // const token = user?.token;
-    setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [location]);
-
   const logout = () => {
     dispatch({ type: "LOGOUT" });
     history.push("/");
     setUser(null);
   };
+
+  useEffect(() => {
+    const token = user?.token;
+    if (token) {
+      const decodedToken = decode(token);
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]);
 
   return (
     <>
