@@ -35,7 +35,7 @@ export const addRecipe = (recipe) => ({
 
 export const postRecipe = (recipe) => async (dispatch) => {
   try {
-    const data = await api.saveRecipe(recipe);
+    const { data } = await api.saveRecipe(recipe);
     dispatch(addRecipe(data));
   } catch (error) {
     dispatch(myRecipesFailed(error.message));
@@ -49,7 +49,7 @@ export const deleteRecipe = (recipeApiId) => ({
 
 export const deleteMyRecipe = (recipeApiId) => async (dispatch) => {
   try {
-    await axios.delete(`${MY_SERVER_URL}/${recipeApiId}`);
+    await api.deleteRecipe(recipeApiId);
     dispatch(deleteRecipe(recipeApiId));
   } catch (error) {
     console.log(error.message);

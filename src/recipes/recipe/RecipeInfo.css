@@ -47,7 +47,6 @@ ul {
 .goback-button {
   color: var(--color-primary);
   font-size: 1.7rem;
-  margin-top: 2rem;
   display: inline-block;
 }
 

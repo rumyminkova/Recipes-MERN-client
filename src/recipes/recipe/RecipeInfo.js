@@ -3,16 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { HiOutlineArrowLeft } from "react-icons/hi";
+import { RiAddCircleLine } from "react-icons/ri";
 
-import "./RecipeInfo.css";
-
-import {
-  postRecipe,
-  deleteMyRecipe,
-} from "../../actions/myrecipes/myrecipesActions";
+import { postRecipe } from "../../actions/myrecipes/myrecipesActions";
 import RenderIngredients from "./RenderIngredients";
 import RenderDirections from "./RenderDirections";
 import RenderTags from "./RenderTags";
+import CustomButton from "../../components/CustomButton";
+import "./RecipeInfo.css";
 
 const RecipeInfo = () => {
   const history = useHistory();
@@ -30,11 +28,9 @@ const RecipeInfo = () => {
         readyInMinutes: recipe.readyInMinutes,
       };
       dispatch(postRecipe(newRecipe));
+    } else {
+      console.log("Login first");
     }
-  };
-
-  const deleteRecipe = () => {
-    dispatch(deleteMyRecipe(recipe.id));
   };
 
   if (JSON.stringify(recipe) === "{}") {
@@ -46,7 +42,7 @@ const RecipeInfo = () => {
       <div className="container recipe-main-container">
         <div className="row justify-content-center">
           <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
-            <div className="d-flex justify-content-between align-items-end">
+            <div className="d-flex justify-content-between align-items-center mt-2">
               <span
                 className="goback-button"
                 onClick={() => {
@@ -56,8 +52,10 @@ const RecipeInfo = () => {
                 <HiOutlineArrowLeft className="mx-1" />
                 Back
               </span>
-              <button onClick={addRecipe}>Add Recipe</button>
-              <button onClick={deleteRecipe}>Delete Recipe</button>
+              <CustomButton
+                buttonLabel={<RiAddCircleLine size="2rem" />}
+                onClick={addRecipe}
+              />
             </div>
             <div className="mx-3 my-5">
               <p className="recipe-info_title text-center">{recipe.title}</p>
