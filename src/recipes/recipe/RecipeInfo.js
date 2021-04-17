@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { HiOutlineArrowLeft } from "react-icons/hi";
-import { RiAddCircleLine } from "react-icons/ri";
+import {AiOutlinePlus } from "react-icons/ai";
 
 import { postRecipe } from "../../actions/myrecipes/myrecipesActions";
 import RenderIngredients from "./RenderIngredients";
@@ -53,7 +53,7 @@ const RecipeInfo = () => {
                 Back
               </span>
               <CustomButton
-                buttonLabel={<RiAddCircleLine size="2rem" />}
+                buttonLabel={<AiOutlinePlus size="2rem" />}
                 onClick={addRecipe}
               />
             </div>
