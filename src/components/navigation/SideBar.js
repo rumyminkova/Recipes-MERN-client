@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import decode from "jwt-decode";
 
+import { logoutUser, fetchUserProfile } from "../../actions/auth/auth";
 import CustomButton from "../CustomButton";
 
 import "./SideBar.css";
@@ -38,14 +39,15 @@ const SIDEBAR_DATA = [
   {
     id: 50,
     path: "/myrecipes",
-    text: "My Recipes",
+    text: "Cookbook",
     cName: "nav-text",
   },
 ];
 
 const SideBar = () => {
   const [sideBar, setSideBar] = useState(false);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const currentUser = useSelector((state) => state.auth.currentUser);
+  const [user, setUser] = useState(null);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -54,19 +56,24 @@ const SideBar = () => {
   const showSideBar = () => setSideBar(!sideBar);
 
   const logout = () => {
-    dispatch({ type: "LOGOUT" });
+    localStorage.removeItem("token");
+    dispatch(logoutUser());
     history.push("/");
-    setUser(null);
   };
 
   useEffect(() => {
-    const token = user?.token;
+    const token = localStorage.getItem("token");
     if (token) {
       const decodedToken = decode(token);
-      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      } else dispatch(fetchUserProfile());
     }
-    setUser(JSON.parse(localStorage.getItem("profile")));
-  }, [location]);
+  }, []);
+
+  useEffect(() => {
+    setUser(currentUser);
+  }, [currentUser]);
 
   return (
     <>
@@ -96,7 +103,7 @@ const SideBar = () => {
                   className="user-name d-inline-block text-truncate"
                   style={{ maxWidth: "95%" }}
                 >
-                  {user.result.name}
+                  {user.name}
                 </span>
                 <CustomButton
                   onClick={logout}

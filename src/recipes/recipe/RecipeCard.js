@@ -50,17 +50,16 @@ const InfoOverlay = ({ calories, fat, carbs, protein }) => {
   );
 };
 
-const RecipeCard = ({ recipe, showCalInfo, removeRecipe }) => {
+const RecipeCard = ({ recipe, showCalInfo, showDeleteButton }) => {
   const imageUrl = `${RECIPES_IMAGES}${recipe.id}-312x231.jpg`;
 
   return (
     <div>
-      <div className="text-right">
-        <CustomButton
-          buttonLabel={<AiOutlineMinus size="2rem" />}
-          onClick={removeRecipe}
-        />
-      </div>
+      {showDeleteButton && (
+        <div className="text-right">
+          <CustomButton buttonLabel={<AiOutlineMinus size="2rem" />} />
+        </div>
+      )}
       <Link to={`/recipes/${recipe.id}`} style={{ textDecoration: "none" }}>
         <Card className="border-0">
           <CardImg width="100%" src={imageUrl} alt={recipe.title} />

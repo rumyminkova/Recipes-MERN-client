@@ -13,7 +13,11 @@ const RecipesContainer = () => {
       ) : recipes.error ? (
         <h1 className="text-center"> {recipes.error} </h1>
       ) : (
-        <RecipesList recipes={recipes} showCalInfo={false} />
+        <RecipesList
+          recipes={recipes}
+          showCalInfo={false}
+          showDeleteButton={false}
+        />
       )}
     </>
   );

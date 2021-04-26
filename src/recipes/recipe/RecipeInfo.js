@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { HiOutlineArrowLeft } from "react-icons/hi";
-import {AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 
 import { postRecipe } from "../../actions/myrecipes/myrecipesActions";
 import RenderIngredients from "./RenderIngredients";
@@ -16,10 +16,11 @@ const RecipeInfo = () => {
   const history = useHistory();
   const recipe = useSelector((state) => state.recipe.item);
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem("profile"));
+  const user = useSelector((state) => state.auth.currentUser);
 
   const addRecipe = () => {
-    if (user?.result?.email) {
+    console.log(user);
+    if (user) {
       const newRecipe = {
         api_id: recipe.id,
         title: recipe.title,
