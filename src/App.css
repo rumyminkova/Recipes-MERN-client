@@ -155,8 +155,3 @@ body {
   color: var(--color-primary-dark);
   transition: 0.3s all;
 }
-
-.alert-container {
-  width: 100%;
-  height: 100%;
-}

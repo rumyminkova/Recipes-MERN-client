@@ -34,11 +34,12 @@ export const addRecipe = (recipe) => ({
 });
 
 export const postRecipe = (recipe) => async (dispatch) => {
+  console.log(recipe);
   try {
     const { data } = await api.saveRecipe(recipe);
     dispatch(addRecipe(data));
-  } catch (error) {
-    dispatch(myRecipesFailed(error.message));
+  } catch (err) {
+    dispatch(myRecipesFailed(err.response.data.message));
   }
 };
 
@@ -47,10 +48,10 @@ export const deleteRecipe = (recipeApiId) => ({
   payload: recipeApiId,
 });
 
-export const deleteMyRecipe = (recipeApiId) => async (dispatch) => {
+export const deleteMyRecipe = (recipeId) => async (dispatch) => {
   try {
-    await api.deleteRecipe(recipeApiId);
-    dispatch(deleteRecipe(recipeApiId));
+    await api.deleteRecipe(recipeId);
+    dispatch(deleteRecipe(recipeId));
   } catch (error) {
     console.log(error.message);
   }

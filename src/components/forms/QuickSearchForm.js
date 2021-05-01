@@ -10,7 +10,7 @@ const QuickSearchForm = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="container search-form_container my-5 py-3">
+    <div className="container search-form_container mb-5 py-3">
       <h2 className="text-center mx-auto mt-3 mb-1">Quick Search</h2>
 
       <div className="row my-md-3 justify-content-around">

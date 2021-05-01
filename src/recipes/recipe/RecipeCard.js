@@ -53,11 +53,19 @@ const InfoOverlay = ({ calories, fat, carbs, protein }) => {
 const RecipeCard = ({ recipe, showCalInfo, showDeleteButton }) => {
   const imageUrl = `${RECIPES_IMAGES}${recipe.id}-312x231.jpg`;
 
+  const handleDeleteRecipe = (recipeId) => {
+    console.log(recipeId);
+  }
+
+  
   return (
     <div>
       {showDeleteButton && (
         <div className="text-right">
-          <CustomButton buttonLabel={<AiOutlineMinus size="2rem" />} />
+          <CustomButton
+            buttonLabel={<AiOutlineMinus size="2rem" />}
+            onClick={handleDeleteRecipe}
+          />
         </div>
       )}
       <Link to={`/recipes/${recipe.id}`} style={{ textDecoration: "none" }}>

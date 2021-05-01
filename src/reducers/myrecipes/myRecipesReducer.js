@@ -11,6 +11,7 @@ const myRecipesReducer = (state = initState, action) => {
     case ActionTypes.MYRECIPES_FAILED:
       return { ...state, loading: false, items: [], error: action.payload };
 
+
     case ActionTypes.MYRECIPES_ADD:
       return {
         ...state,
@@ -35,5 +36,6 @@ const myRecipesReducer = (state = initState, action) => {
       return state;
   }
 };
+
 
 export default myRecipesReducer;

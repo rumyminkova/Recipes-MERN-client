@@ -1,12 +1,11 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { GiBlackBook } from "react-icons/gi";
-import { UncontrolledAlert } from "reactstrap";
 
 import { fetchMyRecipes } from "../actions/myrecipes/myrecipesActions";
 import Loading from "../components/Loading";
 import RecipesList from "../recipes/RecipesList";
-import Errors from "../components/Errors";
+import CustomAlert from "../components/CustomAlert";
 
 const MyRecipesPage = () => {
   const recipes = useSelector((state) => state.myrecipes);
@@ -22,16 +21,14 @@ const MyRecipesPage = () => {
   if (!user)
     return (
       <>
-        {!user && (
-          <Errors error text="Signin to access your Cookbook" redirect="/" />
-        )}
+        <CustomAlert text="Sign in to access your Cookbook" redirect="/" />
       </>
     );
 
   return (
     <>
       {recipes.error ? (
-        <Errors error text={`${recipes.error.message}`} redirect="/" />
+        <CustomAlert text={`${recipes.error.message}`} redirect="/" />
       ) : recipes.loading ? (
         <Loading />
       ) : (

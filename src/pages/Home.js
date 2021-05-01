@@ -6,7 +6,7 @@ import RecipesContainer from "../recipes/RecipesContainer";
 const Home = () => {
   return (
     <>
-      <div className="container">
+       <div className="container">
         <div className="row justify-content-center">
           <div className="col my-5">
             <QuickSearchForm />

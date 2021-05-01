@@ -29,7 +29,6 @@ const authUser = (user) => ({
 // Your backend should be set up to receive the token, decode it, and then return its associated user object. You then save this to the Redux store as usual.
 export const fetchUserProfile = () => async (dispatch) => {
   const { data } = await api.getUserInfo();
-  console.log(data);
   // if (data.message) {
   //   // An error will occur if the token is invalid.
   //   // If this happens, you may want to remove the invalid token.
