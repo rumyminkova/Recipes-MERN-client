@@ -12,6 +12,7 @@ import MealPlanPage from "./pages/MealPlanPage";
 import RecipesNutrients from "./pages/RecipesNutrientsPage";
 import SideBar from "./components/navigation/SideBar";
 import Auth from "./components/auth/Auth";
+import ErrorNotification from "./components/ErrorNotification";
 import "./App.css";
 
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
         <div className="main-container">
           <BrowserRouter>
             <SideBar />
+            <ErrorNotification />
             <Switch>
               <Route path="/" exact component={Home} />
               <Route

@@ -9,7 +9,7 @@ const mealsReducer = (state = initState, action) => {
     case ActionTypes.MEALS_SUCCESS:
       return { ...state, loading: false, meals: action.payload, error: null };
     case ActionTypes.MEALS_FAILED:
-      return { ...state, loading: false, meals: {}, error: action.payload };
+      return { ...state, loading: false, meals: {}, error: action.error };
     default:
       return state;
   }

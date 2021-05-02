@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
@@ -16,21 +16,7 @@ import "./RecipeInfo.css";
 const RecipeInfo = () => {
   const history = useHistory();
   const recipe = useSelector((state) => state.recipe.item);
-  const myrecipes = useSelector((state) => state.myrecipes.items);
-  const currentUser = useSelector((state) => state.auth.currentUser);
   const dispatch = useDispatch();
-
-  const [textAlert, setTextAlert] = useState("");
-
-  const [showAddButton, setShowAddButton] = useState(false);
-
-  useEffect(() => {
-    setShowAddButton(
-      currentUser && myrecipes.every((item) => item.api_id !== recipe.id)
-    );
-
-    console.log("In useEffect", currentUser, myrecipes, recipe.id);
-  }, [currentUser, myrecipes, recipe.id]);
 
   const addRecipe = () => {
     const newRecipe = {
@@ -41,17 +27,14 @@ const RecipeInfo = () => {
       readyInMinutes: recipe.readyInMinutes,
     };
     dispatch(postRecipe(newRecipe));
-    setTextAlert("Added");
   };
 
   if (JSON.stringify(recipe) === "{}") {
     return <CustomAlert text="No info was found" />;
   }
 
-
   return (
     <>
-      {textAlert && <CustomAlert text={textAlert} />}
       <div className="container recipe-main-container">
         <div className="row justify-content-center">
           <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
@@ -65,12 +48,10 @@ const RecipeInfo = () => {
                 <HiOutlineArrowLeft className="mx-1" />
                 Back
               </span>
-              {showAddButton && (
-                <CustomButton
-                  buttonLabel={<AiOutlinePlus size="2rem" />}
-                  onClick={addRecipe}
-                />
-              )}
+              <CustomButton
+                buttonLabel={<AiOutlinePlus size="2rem" />}
+                onClick={addRecipe}
+              />
             </div>
             <div className="mx-3 my-5">
               <p className="recipe-info_title text-center">{recipe.title}</p>

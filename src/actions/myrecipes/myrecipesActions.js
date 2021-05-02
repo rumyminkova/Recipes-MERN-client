@@ -10,7 +10,7 @@ const myRecipesLoading = () => ({
 
 const myRecipesFailed = (errMsg) => ({
   type: ActionTypes.MYRECIPES_FAILED,
-  payload: errMsg,
+  error: errMsg,
 });
 
 export const myRecipesSuccess = (recipes) => ({

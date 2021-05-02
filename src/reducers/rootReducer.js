@@ -5,6 +5,7 @@ import mealsReducer from "./mealsReducer";
 import nutrientsReducer from "./nutrientsReducer";
 import myRecipesReducer from "./myrecipes/myRecipesReducer";
 import authReducer from "./auth/authReducer";
+import errorReducer from "./errorReducer";
 
 export const rootReducer = combineReducers({
   recipes: recipesReducer,
@@ -13,4 +14,5 @@ export const rootReducer = combineReducers({
   nutrients: nutrientsReducer,
   myrecipes: myRecipesReducer,
   auth: authReducer,
+  error: errorReducer,
 });

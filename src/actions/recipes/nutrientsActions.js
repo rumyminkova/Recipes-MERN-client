@@ -9,7 +9,7 @@ const nutrientsLoading = () => ({
 
 const nutrientsFailed = (errMsg) => ({
   type: ActionTypes.NUTRIENTS_FAILED,
-  payload: errMsg,
+  error: errMsg,
 });
 
 export const nutrientsSuccess = (recipes) => ({

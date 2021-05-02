@@ -9,8 +9,7 @@ const myRecipesReducer = (state = initState, action) => {
     case ActionTypes.MYRECIPES_SUCCESS:
       return { ...state, loading: false, items: action.payload, error: null };
     case ActionTypes.MYRECIPES_FAILED:
-      return { ...state, loading: false, items: [], error: action.payload };
-
+      return { ...state, loading: false, items: [], error: action.error };
 
     case ActionTypes.MYRECIPES_ADD:
       return {
@@ -36,6 +35,5 @@ const myRecipesReducer = (state = initState, action) => {
       return state;
   }
 };
-
 
 export default myRecipesReducer;

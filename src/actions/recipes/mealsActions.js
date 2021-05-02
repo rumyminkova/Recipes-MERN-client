@@ -9,7 +9,7 @@ const mealsLoading = () => ({
 
 const mealsFailed = (errMsg) => ({
   type: ActionTypes.MEALS_FAILED,
-  payload: errMsg,
+  error: errMsg,
 });
 
 export const mealsSuccess = (meals) => ({
