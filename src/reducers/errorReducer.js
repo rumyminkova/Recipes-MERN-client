@@ -6,9 +6,6 @@ const initState = {
 };
 
 const errorReducer = (state = initState, action) => {
-  console.log("in error reducer");
-  console.log("Action", action);
-  console.log("Error", action.error);
   const { error } = action;
   if (error) {
     return {
