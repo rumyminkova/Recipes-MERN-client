@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardImgOverlay, CardImg, CardTitle } from "reactstrap";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { AiOutlineMinus } from "react-icons/ai";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 
 import { deleteMyRecipe } from "../../actions/myrecipes/myrecipesActions";
 import { RECIPES_IMAGES } from "../../config";
@@ -68,6 +68,9 @@ const RecipeCard = ({ recipe, showCalInfo, showDeleteButton }) => {
           <CustomButton
             buttonLabel={<AiOutlineMinus size="2rem" />}
             onClick={handleDeleteRecipe}
+            type="button"
+            tooltip
+            tooltipText="Remove recipe from Cookbook"
           />
         </div>
       )}

@@ -33,7 +33,7 @@ const MyRecipesPage = () => {
           <div className="container p-5 my-5 myrecipes-container">
             <p className="recipe-info_title text-center my-5">
               <GiBlackBook className="myrecipes_icon mr-3" />
-              {user.name}'s Cookbook
+              Cookbook
             </p>
             <RecipesList
               recipes={recipes.items}

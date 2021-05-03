@@ -20,3 +20,11 @@
 .submit-button:focus {
   outline: none;
 }
+
+.custom-tooltip {
+  font-size: 1.5rem;
+}
+
+.custom-tooltip_inner {
+  background-color: var(--color-gray-1);
+}

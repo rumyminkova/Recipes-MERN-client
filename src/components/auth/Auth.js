@@ -110,6 +110,8 @@ const Auth = () => {
               <CustomButton
                 buttonLabel={isSignUp ? "Sign Up" : "Sign In"}
                 type="submit"
+                tooltip={false}
+                tooltipText=""
               />
             </div>
             <div className="my-3 d-flex justify-content-end">

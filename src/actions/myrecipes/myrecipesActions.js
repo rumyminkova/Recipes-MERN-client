@@ -21,8 +21,8 @@ export const fetchMyRecipes = () => async (dispatch) => {
   try {
     const { data } = await api.fetchMyRecipes();
     dispatch(myRecipesSuccess(data));
-  } catch (error) {
-    dispatch(myRecipesFailed(error.message));
+  } catch (err) {
+    dispatch(myRecipesFailed(err.response.data.message));
   }
 };
 
