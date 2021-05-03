@@ -1,5 +1,5 @@
 import * as api from "../../api/index.js";
-import * as ActionTypes from "../actionTypes";
+import * as ActionTypes from "./authTypes";
 
 export const signin = (formData) => async (dispatch) => {
   try {
@@ -7,7 +7,7 @@ export const signin = (formData) => async (dispatch) => {
     localStorage.setItem("token", data.token);
     dispatch(authUser(data.result));
   } catch (err) {
-    console.log(err);
+    dispatch(userFailed(err.response.data.message));
   }
 };
 
@@ -17,7 +17,7 @@ export const signup = (formData) => async (dispatch) => {
     localStorage.setItem("token", data.token);
     dispatch(authUser(data.result));
   } catch (err) {
-    console.log(err);
+    dispatch(userFailed(err.response.data.message));
   }
 };
 
@@ -28,18 +28,19 @@ const authUser = (user) => ({
 
 // Your backend should be set up to receive the token, decode it, and then return its associated user object. You then save this to the Redux store as usual.
 export const fetchUserProfile = () => async (dispatch) => {
-  const { data } = await api.getUserInfo();
-  // if (data.message) {
-  //   // An error will occur if the token is invalid.
-  //   // If this happens, you may want to remove the invalid token.
-  //   localStorage.removeItem("token");
-  // } else {
-  //   console.log(data);
-  // }
-
-  dispatch(authUser(data.result));
+  try {
+    const { data } = await api.getUserInfo();
+    dispatch(authUser(data.result));
+  } catch (err) {
+    localStorage.removeItem("token");
+    dispatch(userFailed(err.response.data.message));
+  }
 };
 
 export const logoutUser = () => {
   return { type: ActionTypes.LOGOUT };
+};
+
+export const userFailed = (errorMsg) => {
+  return { type: ActionTypes.USER_FAILED, error: errorMsg };
 };

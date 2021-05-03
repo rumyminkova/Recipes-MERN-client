@@ -10,8 +10,6 @@ const RecipesContainer = () => {
     <>
       {recipes.loading ? (
         <Loading />
-      ) : recipes.error ? (
-        <h1 className="text-center"> {recipes.error} </h1>
       ) : (
         <RecipesList
           recipes={recipes}

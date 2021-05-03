@@ -17,10 +17,8 @@ const RecipeInfoPage = () => {
 
   return recipe.loading ? (
     <Loading />
-  ) : recipe.error ? (
-    <div> recipe.error</div>
   ) : (
-    <RecipeInfo />
+    recipe.item && <RecipeInfo recipe={recipe.item} />
   );
 };
 

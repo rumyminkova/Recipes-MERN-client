@@ -13,10 +13,11 @@ import CustomButton from "../../components/CustomButton";
 import CustomAlert from "../../components/CustomAlert";
 import "./RecipeInfo.css";
 
-const RecipeInfo = () => {
+const RecipeInfo = ({ recipe }) => {
   const history = useHistory();
-  const recipe = useSelector((state) => state.recipe.item);
   const dispatch = useDispatch();
+
+  const handleGoBack = () => history.goBack();
 
   const addRecipe = () => {
     const newRecipe = {
@@ -29,28 +30,22 @@ const RecipeInfo = () => {
     dispatch(postRecipe(newRecipe));
   };
 
-  if (JSON.stringify(recipe) === "{}") {
-    return <CustomAlert text="No info was found" />;
-  }
-
   return (
     <>
       <div className="container recipe-main-container">
         <div className="row justify-content-center">
           <div className="col-11 col-sm-10 col-md-10 col-lg-8 recipe-container_info my-5">
             <div className="d-flex justify-content-between align-items-center mt-2">
-              <span
-                className="goback-button"
-                onClick={() => {
-                  history.goBack();
-                }}
-              >
+              <span className="goback-button" onClick={handleGoBack}>
                 <HiOutlineArrowLeft className="mx-1" />
                 Back
               </span>
               <CustomButton
                 buttonLabel={<AiOutlinePlus size="2rem" />}
                 onClick={addRecipe}
+                type="button"
+                tooltip
+                tooltipText="Add recipe to Cookbook"
               />
             </div>
             <div className="mx-3 my-5">

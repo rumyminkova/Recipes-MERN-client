@@ -22,6 +22,3 @@ export const MYRECIPES_ADD = "MYRECIPES_ADD";
 export const MYRECIPES_DELETE = "MYRECIPES_DELETE";
 export const MYRECIPE_FAILED = "MYRECIPE_FAILED";
 
-export const AUTH = "AUTH";
-export const AUTH_USER = "AUTH_USER";
-export const LOGOUT = "LOGOUT";

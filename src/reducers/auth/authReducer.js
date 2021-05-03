@@ -1,17 +1,15 @@
-import * as ActionTypes from "../../actions/actionTypes";
+import * as ActionTypes from "../../actions/auth/authTypes";
 
-const authReducer = (state = { currentUser: null }, action) => {
+const authReducer = (state = { currentUser: null, error: null }, action) => {
   switch (action.type) {
-    // case ActionTypes.AUTH:
-    //   localStorage.setItem("profile", JSON.stringify({ ...action?.payload }));
-    //   return { ...state, currentUser: action?.payload };
-
     case ActionTypes.AUTH_USER:
-      return { ...state, currentUser: action?.payload };
+      return { ...state, currentUser: action?.payload, error: null };
 
     case ActionTypes.LOGOUT:
-      console.log("Inlogout");
-      return { ...state, currentUser: null };
+      return { ...state, currentUser: null, error: null };
+
+    case ActionTypes.USER_FAILED:
+      return { ...state, currentUser: null, error: action.error };
 
     default:
       return state;
