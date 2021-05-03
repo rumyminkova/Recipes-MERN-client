@@ -14,7 +14,6 @@ const GenerateMealForm = () => {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(fetchMeals(data));
   };
 

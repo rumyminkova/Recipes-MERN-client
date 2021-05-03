@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import React, { useState, useEffect} from "react";
+import { Link, useHistory} from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
@@ -51,7 +51,6 @@ const SideBar = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const location = useLocation();
 
   const showSideBar = () => setSideBar(!sideBar);
 

@@ -35,11 +35,15 @@ const MyRecipesPage = () => {
               <GiBlackBook className="myrecipes_icon mr-3" />
               Cookbook
             </p>
-            <RecipesList
-              recipes={recipes.items}
-              showCalInfo={false}
-              showDeleteButton
-            />
+            {recipes.items.length === 0 ? (
+              <h2 className="text-center">Your Cookbook is empty</h2>
+            ) : (
+              <RecipesList
+                recipes={recipes.items}
+                showCalInfo={false}
+                showDeleteButton
+              />
+            )}
           </div>
         )}
       </>

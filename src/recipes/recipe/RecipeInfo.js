@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { HiOutlineArrowLeft } from "react-icons/hi";
@@ -10,7 +10,6 @@ import RenderIngredients from "./RenderIngredients";
 import RenderDirections from "./RenderDirections";
 import RenderTags from "./RenderTags";
 import CustomButton from "../../components/CustomButton";
-import CustomAlert from "../../components/CustomAlert";
 import "./RecipeInfo.css";
 
 const RecipeInfo = ({ recipe }) => {

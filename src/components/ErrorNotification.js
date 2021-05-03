@@ -17,7 +17,7 @@ const ErrorNotification = () => {
   return (
     <>
       {isOpen && error && (
-        <div className="bg-light my-3">
+        <div className="my-3 py-1 mx-auto notification">
           <h3 className="p-1 m-1 text-center text-dark my-2">{error}</h3>
           <div className="d-flex justify-content-center mt-3">
             <CustomButton
