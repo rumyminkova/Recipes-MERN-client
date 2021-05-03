@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Card, CardImgOverlay, CardImg, CardTitle } from "reactstrap";
 import { FaUtensils, FaRegClock } from "react-icons/fa";
 import { AiOutlineMinus } from "react-icons/ai";
+import {useDispatch} from "react-redux"
 
+import { deleteMyRecipe } from "../../actions/myrecipes/myrecipesActions";
 import { RECIPES_IMAGES } from "../../config";
 import CustomButton from "../../components/CustomButton";
 import "./RecipeCard.css";
@@ -53,11 +55,12 @@ const InfoOverlay = ({ calories, fat, carbs, protein }) => {
 const RecipeCard = ({ recipe, showCalInfo, showDeleteButton }) => {
   const imageUrl = `${RECIPES_IMAGES}${recipe.id}-312x231.jpg`;
 
-  const handleDeleteRecipe = (recipeId) => {
-    console.log(recipeId);
-  }
+  const dispatch = useDispatch();
 
-  
+  const handleDeleteRecipe = () => {
+    dispatch(deleteMyRecipe(recipe._id));
+  };
+
   return (
     <div>
       {showDeleteButton && (

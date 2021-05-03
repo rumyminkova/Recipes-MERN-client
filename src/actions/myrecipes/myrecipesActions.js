@@ -1,8 +1,6 @@
-import axios from "axios";
 import * as api from "../../api/index.js";
-
 import * as ActionTypes from "../actionTypes";
-import { MY_SERVER_URL } from "../../config";
+import { setError } from "../errors/errorActions";
 
 const myRecipesLoading = () => ({
   type: ActionTypes.MYRECIPES_LOADING,
@@ -34,25 +32,26 @@ export const addRecipe = (recipe) => ({
 });
 
 export const postRecipe = (recipe) => async (dispatch) => {
-  console.log(recipe);
   try {
     const { data } = await api.saveRecipe(recipe);
     dispatch(addRecipe(data));
+    dispatch(setError("Recipe Added"));
   } catch (err) {
     dispatch(myRecipesFailed(err.response.data.message));
   }
 };
 
-export const deleteRecipe = (recipeApiId) => ({
+export const deleteRecipe = (recipeId) => ({
   type: ActionTypes.MYRECIPES_DELETE,
-  payload: recipeApiId,
+  payload: recipeId,
 });
 
 export const deleteMyRecipe = (recipeId) => async (dispatch) => {
   try {
     await api.deleteRecipe(recipeId);
     dispatch(deleteRecipe(recipeId));
-  } catch (error) {
-    console.log(error.message);
+    dispatch(setError("Recipe Removed"));
+  } catch (err) {
+    dispatch(myRecipesFailed(err.response.data.message));
   }
 };
