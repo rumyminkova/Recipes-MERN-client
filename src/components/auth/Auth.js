@@ -4,7 +4,7 @@ import { AiFillLock } from "react-icons/ai";
 // import { FcGoogle } from "react-icons/fc";
 // import { GoogleLogin } from "react-google-login";
 // import { GOOGLE_CLIENT_ID } from "../../config";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import CustomInput from "./CustomInput";
@@ -114,11 +114,14 @@ const Auth = () => {
               />
             </div>
             <div className="my-3 d-flex justify-content-end">
-              <a onClick={switchMode} className="btn btn-lg sign-in-up-btn">
+              <button
+                onClick={switchMode}
+                className="btn btn-lg sign-in-up-btn"
+              >
                 {isSignUp
                   ? "Already have an account? Sign In"
                   : "Don't have an account? Sign Up"}
-              </a>
+              </button>
             </div>
             {/* <GoogleLogin
               clientId={GOOGLE_CLIENT_ID}

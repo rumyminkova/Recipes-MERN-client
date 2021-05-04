@@ -65,10 +65,12 @@ const SideBar = () => {
     if (token) {
       const decodedToken = decode(token);
       if (decodedToken.exp * 1000 < new Date().getTime()) {
-        logout();
+        localStorage.removeItem("token");
+        dispatch(logoutUser());
+        history.push("/");
       } else dispatch(fetchUserProfile());
     }
-  }, []);
+  }, [dispatch, history]);
 
   useEffect(() => {
     setUser(currentUser);

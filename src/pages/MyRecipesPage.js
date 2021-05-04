@@ -22,7 +22,7 @@ const MyRecipesPage = () => {
     } else {
       dispatch(fetchMyRecipes(history));
     }
-  }, []);
+  }, [dispatch, history, user]);
 
   if (user) {
     return (
