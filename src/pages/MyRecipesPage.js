@@ -20,7 +20,7 @@ const MyRecipesPage = () => {
       dispatch(setError("Please sign in to access your Cookbook"));
       history.push("/");
     } else {
-      dispatch(fetchMyRecipes());
+      dispatch(fetchMyRecipes(history));
     }
   }, []);
 
@@ -30,21 +30,19 @@ const MyRecipesPage = () => {
         {recipes.loading ? (
           <Loading />
         ) : (
-          <div className="container p-5 my-5 myrecipes-container">
-            <p className="recipe-info_title text-center my-5">
-              <GiBlackBook className="myrecipes_icon mr-3" />
-              Cookbook
-            </p>
-            {recipes.items.length === 0 ? (
-              <h2 className="text-center">Your Cookbook is empty</h2>
-            ) : (
+          recipes.items.length > 0 && (
+            <div className="container p-5 my-5 myrecipes-container">
+              <p className="recipe-info_title text-center my-5">
+                <GiBlackBook className="myrecipes_icon mr-3" />
+                Cookbook
+              </p>
               <RecipesList
                 recipes={recipes.items}
                 showCalInfo={false}
                 showDeleteButton
               />
-            )}
-          </div>
+            </div>
+          )
         )}
       </>
     );

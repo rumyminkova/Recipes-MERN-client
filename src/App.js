@@ -76,7 +76,7 @@ const App = () => {
                 component={RecipeInfoPage}
               />
               <Route path="/auth" exact component={Auth} />
-              <Route path="/myrecipes" exact component={MyRecipesPage} />
+              <Route path="/cookbook" exact component={MyRecipesPage} />
               <Redirect to="/" />
             </Switch>
           </BrowserRouter>

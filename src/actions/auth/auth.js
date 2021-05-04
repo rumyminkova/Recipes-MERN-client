@@ -1,21 +1,23 @@
 import * as api from "../../api/index.js";
 import * as ActionTypes from "./authTypes";
 
-export const signin = (formData) => async (dispatch) => {
+export const signin = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.signin(formData);
     localStorage.setItem("token", data.token);
     dispatch(authUser(data.result));
+    history.push("/");
   } catch (err) {
     dispatch(userFailed(err.response.data.message));
   }
 };
 
-export const signup = (formData) => async (dispatch) => {
+export const signup = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.signup(formData);
     localStorage.setItem("token", data.token);
     dispatch(authUser(data.result));
+    history.push("/");
   } catch (err) {
     dispatch(userFailed(err.response.data.message));
   }

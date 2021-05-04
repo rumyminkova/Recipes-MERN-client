@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Container, Col, Row, Form } from "reactstrap";
 import { AiFillLock } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
-import { GoogleLogin } from "react-google-login";
-import { useDispatch } from "react-redux";
+// import { FcGoogle } from "react-icons/fc";
+// import { GoogleLogin } from "react-google-login";
+// import { GOOGLE_CLIENT_ID } from "../../config";
+import { useDispatch} from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { GOOGLE_CLIENT_ID } from "../../config";
 import CustomInput from "./CustomInput";
 import CustomButton from "../CustomButton";
 import { signin, signup } from "../../actions/auth/auth";
@@ -33,34 +33,33 @@ const Auth = () => {
     setShowPassword(false);
   };
 
-  const handleSubmit = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     if (isSignUp) {
-      dispatch(signup(formData));
+      dispatch(signup(formData, history));
     } else {
-      dispatch(signin(formData));
+      dispatch(signin(formData, history));
     }
-    history.push("/");
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const googleSuccess = async (res) => {
-    const result = res?.profileObj;
-    const token = res?.tokenId;
-    try {
-      dispatch({ type: "AUTH", payload: { result, token } });
-      history.push("/");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const googleSuccess = async (res) => {
+  //   const result = res?.profileObj;
+  //   const token = res?.tokenId;
+  //   try {
+  //     dispatch({ type: "AUTH", payload: { result, token } });
+  //     history.push("/");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  const googleFailure = (err) => {
-    console.log("Google sign in Failed", err);
-  };
+  // const googleFailure = (err) => {
+  //   console.log("Google sign in Failed", err);
+  // };
 
   return (
     <Container className="my-5">
@@ -72,7 +71,7 @@ const Auth = () => {
           <h2 className="text-center mb-5">
             {isSignUp ? "Sign Up" : "Sign In"}
           </h2>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={submitForm}>
             {isSignUp && (
               <CustomInput
                 type="text"

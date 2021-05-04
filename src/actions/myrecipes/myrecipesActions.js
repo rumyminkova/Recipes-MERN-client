@@ -16,13 +16,14 @@ export const myRecipesSuccess = (recipes) => ({
   payload: recipes,
 });
 
-export const fetchMyRecipes = () => async (dispatch) => {
+export const fetchMyRecipes = (history) => async (dispatch) => {
   dispatch(myRecipesLoading());
   try {
     const { data } = await api.fetchMyRecipes();
     dispatch(myRecipesSuccess(data));
   } catch (err) {
     dispatch(myRecipesFailed(err.response.data.message));
+    history.push("/");
   }
 };
 

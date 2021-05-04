@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import RecipeCard from "./recipe/RecipeCard";
 
@@ -15,7 +16,7 @@ const RecipesList = ({ recipes, showCalInfo, showDeleteButton }) => {
       <div className="row justify-content-center mb-3">
         {allRecipes.map((recipe) => (
           <div
-            key={recipe.id}
+            key={uuidv4()}
             className="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2  my-5 mx-5 mx-md-3 p-0 recipe-card"
           >
             <RecipeCard

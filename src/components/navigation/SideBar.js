@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import { Link, useHistory} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { ImSpoonKnife } from "react-icons/im";
 import { IconContext } from "react-icons";
@@ -38,7 +38,7 @@ const SIDEBAR_DATA = [
   },
   {
     id: 50,
-    path: "/myrecipes",
+    path: "/cookbook",
     text: "Cookbook",
     cName: "nav-text",
   },
