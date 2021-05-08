@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const MYAPI = axios.create({ baseURL: "http://localhost:5000/" });
+const MYAPI = axios.create({
+  baseURL: "https://digital-cook-book.herokuapp.com",
+});
 
 MYAPI.interceptors.request.use((req) => {
   if (localStorage.getItem("token")) {
