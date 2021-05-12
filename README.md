@@ -1,5 +1,5 @@
 # Recipes
 
-### [Live site](https://fungifs.netlify.app/)
+### [Live site](https://mydigitalcookbook.netlify.app/)
 
- ![FunGifs](https://i.ibb.co/kKmgDkH/recipes-w.png)
+ ![Recipes](https://i.ibb.co/kKmgDkH/recipes-w.png)
